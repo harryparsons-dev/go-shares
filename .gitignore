@@ -1,0 +1,6 @@
+assets
+venv
+*.pdf
+*.csv
+*.ipynb
+go.sum
