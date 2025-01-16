@@ -1,42 +1,36 @@
+
 <html>
 <head>
 <style>
 @page {
     size: landscape;
     margin: 0in 0in 0in 0in;
-
 }
-body{
-    /* display:flex;
-    flex-direction: row-reverse; */
-    margin:0;
+body {
+    margin: 0;
 }
-div{
+div {
     position: relative;
-
     font-size: 8px;
     width: 10%;
-    font-family:  	Courier New;
+    font-family: "Courier New";
     padding-top: 5px;
-
     font-weight: bold;
-
 }
 table {
     margin-left: 0;
     margin-right: 0;
-    margin-top:0;
-    font-size:11px;
+    margin-top: 0;
+    font-size: 11px;
 }
 table, th, td {
     border: 0.2px solid black;
     border-collapse: collapse;
 }
 th, td {
-    padding: 1.5px;
+    padding: 1px;
     text-align: left;
     font-family: Helvetica, Arial, sans-serif;
-
 }
 table tbody tr:hover {
     background-color: #dddddd;
@@ -50,774 +44,773 @@ table thead th {
 </style>
 </head>
 <body>
-
 <style type="text/css">
-#T_d2447_row0_col6, #T_d2447_row0_col7, #T_d2447_row1_col6, #T_d2447_row1_col7, #T_d2447_row2_col6, #T_d2447_row2_col7, #T_d2447_row3_col6, #T_d2447_row3_col7, #T_d2447_row4_col6, #T_d2447_row4_col7, #T_d2447_row5_col6, #T_d2447_row5_col7, #T_d2447_row6_col6, #T_d2447_row6_col7, #T_d2447_row7_col6, #T_d2447_row7_col7, #T_d2447_row8_col6, #T_d2447_row8_col7, #T_d2447_row9_col6, #T_d2447_row9_col7, #T_d2447_row10_col6, #T_d2447_row10_col7, #T_d2447_row11_col6, #T_d2447_row11_col7, #T_d2447_row12_col6, #T_d2447_row12_col7, #T_d2447_row13_col6, #T_d2447_row13_col7, #T_d2447_row14_col6, #T_d2447_row14_col7, #T_d2447_row15_col6, #T_d2447_row15_col7, #T_d2447_row16_col6, #T_d2447_row16_col7, #T_d2447_row17_col6, #T_d2447_row17_col7, #T_d2447_row52_col6, #T_d2447_row52_col7 {
+#T_e1764_row0_col6, #T_e1764_row0_col7, #T_e1764_row1_col6, #T_e1764_row1_col7, #T_e1764_row2_col6, #T_e1764_row2_col7, #T_e1764_row3_col6, #T_e1764_row3_col7, #T_e1764_row4_col6, #T_e1764_row4_col7, #T_e1764_row5_col6, #T_e1764_row5_col7, #T_e1764_row6_col6, #T_e1764_row6_col7, #T_e1764_row7_col6, #T_e1764_row7_col7, #T_e1764_row8_col6, #T_e1764_row8_col7, #T_e1764_row9_col6, #T_e1764_row9_col7, #T_e1764_row10_col6, #T_e1764_row10_col7, #T_e1764_row11_col6, #T_e1764_row11_col7, #T_e1764_row12_col6, #T_e1764_row12_col7, #T_e1764_row13_col6, #T_e1764_row13_col7, #T_e1764_row14_col6, #T_e1764_row14_col7, #T_e1764_row15_col6, #T_e1764_row15_col7, #T_e1764_row16_col6, #T_e1764_row16_col7, #T_e1764_row17_col6, #T_e1764_row17_col7, #T_e1764_row52_col6, #T_e1764_row52_col7 {
   color: black;
 }
-#T_d2447_row18_col6, #T_d2447_row18_col7, #T_d2447_row19_col6, #T_d2447_row19_col7, #T_d2447_row20_col6, #T_d2447_row20_col7, #T_d2447_row21_col6, #T_d2447_row21_col7, #T_d2447_row22_col6, #T_d2447_row22_col7, #T_d2447_row23_col6, #T_d2447_row23_col7, #T_d2447_row24_col6, #T_d2447_row24_col7, #T_d2447_row25_col6, #T_d2447_row25_col7, #T_d2447_row26_col6, #T_d2447_row26_col7, #T_d2447_row27_col6, #T_d2447_row27_col7, #T_d2447_row28_col6, #T_d2447_row28_col7, #T_d2447_row29_col6, #T_d2447_row29_col7, #T_d2447_row30_col6, #T_d2447_row30_col7, #T_d2447_row31_col6, #T_d2447_row31_col7, #T_d2447_row32_col6, #T_d2447_row32_col7, #T_d2447_row33_col6, #T_d2447_row33_col7, #T_d2447_row34_col6, #T_d2447_row34_col7, #T_d2447_row35_col6, #T_d2447_row35_col7, #T_d2447_row36_col6, #T_d2447_row36_col7, #T_d2447_row37_col6, #T_d2447_row37_col7, #T_d2447_row38_col6, #T_d2447_row38_col7, #T_d2447_row39_col6, #T_d2447_row39_col7, #T_d2447_row40_col6, #T_d2447_row40_col7, #T_d2447_row41_col6, #T_d2447_row41_col7, #T_d2447_row42_col6, #T_d2447_row42_col7, #T_d2447_row43_col6, #T_d2447_row43_col7, #T_d2447_row44_col6, #T_d2447_row44_col7, #T_d2447_row45_col6, #T_d2447_row45_col7, #T_d2447_row46_col6, #T_d2447_row46_col7, #T_d2447_row47_col6, #T_d2447_row47_col7, #T_d2447_row48_col6, #T_d2447_row48_col7, #T_d2447_row49_col6, #T_d2447_row49_col7, #T_d2447_row50_col6, #T_d2447_row50_col7 {
+#T_e1764_row18_col6, #T_e1764_row18_col7, #T_e1764_row19_col6, #T_e1764_row19_col7, #T_e1764_row20_col6, #T_e1764_row20_col7, #T_e1764_row21_col6, #T_e1764_row21_col7, #T_e1764_row22_col6, #T_e1764_row22_col7, #T_e1764_row23_col6, #T_e1764_row23_col7, #T_e1764_row24_col6, #T_e1764_row24_col7, #T_e1764_row25_col6, #T_e1764_row25_col7, #T_e1764_row26_col6, #T_e1764_row26_col7, #T_e1764_row27_col6, #T_e1764_row27_col7, #T_e1764_row28_col6, #T_e1764_row28_col7, #T_e1764_row29_col6, #T_e1764_row29_col7, #T_e1764_row30_col6, #T_e1764_row30_col7, #T_e1764_row31_col6, #T_e1764_row31_col7, #T_e1764_row32_col6, #T_e1764_row32_col7, #T_e1764_row33_col6, #T_e1764_row33_col7, #T_e1764_row34_col6, #T_e1764_row34_col7, #T_e1764_row35_col6, #T_e1764_row35_col7, #T_e1764_row36_col6, #T_e1764_row36_col7, #T_e1764_row37_col6, #T_e1764_row37_col7, #T_e1764_row38_col6, #T_e1764_row38_col7, #T_e1764_row39_col6, #T_e1764_row39_col7, #T_e1764_row40_col6, #T_e1764_row40_col7, #T_e1764_row41_col6, #T_e1764_row41_col7, #T_e1764_row42_col6, #T_e1764_row42_col7, #T_e1764_row43_col6, #T_e1764_row43_col7, #T_e1764_row44_col6, #T_e1764_row44_col7, #T_e1764_row45_col6, #T_e1764_row45_col7, #T_e1764_row46_col6, #T_e1764_row46_col7, #T_e1764_row47_col6, #T_e1764_row47_col7, #T_e1764_row48_col6, #T_e1764_row48_col7, #T_e1764_row49_col6, #T_e1764_row49_col7, #T_e1764_row50_col6, #T_e1764_row50_col7 {
   color: red;
 }
 </style>
-<table id="T_d2447">
+<table id="T_e1764">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_d2447_level0_col0" class="col_heading level0 col0" >Symbol</th>
-      <th id="T_d2447_level0_col1" class="col_heading level0 col1" >Name</th>
-      <th id="T_d2447_level0_col2" class="col_heading level0 col2" >Qty</th>
-      <th id="T_d2447_level0_col3" class="col_heading level0 col3" >Price</th>
-      <th id="T_d2447_level0_col4" class="col_heading level0 col4" >Market Value</th>
-      <th id="T_d2447_level0_col5" class="col_heading level0 col5" >Book Cost</th>
-      <th id="T_d2447_level0_col6" class="col_heading level0 col6" >Gain/Loss</th>
-      <th id="T_d2447_level0_col7" class="col_heading level0 col7" >Gain/Loss %</th>
-      <th id="T_d2447_level0_col8" class="col_heading level0 col8" >Average Price</th>
-      <th id="T_d2447_level0_col9" class="col_heading level0 col9" >Sector</th>
-      <th id="T_d2447_level0_col10" class="col_heading level0 col10" >Dividend Yield</th>
+      <th id="T_e1764_level0_col0" class="col_heading level0 col0" >Symbol</th>
+      <th id="T_e1764_level0_col1" class="col_heading level0 col1" >Name</th>
+      <th id="T_e1764_level0_col2" class="col_heading level0 col2" >Qty</th>
+      <th id="T_e1764_level0_col3" class="col_heading level0 col3" >Price</th>
+      <th id="T_e1764_level0_col4" class="col_heading level0 col4" >Market Value</th>
+      <th id="T_e1764_level0_col5" class="col_heading level0 col5" >Book Cost</th>
+      <th id="T_e1764_level0_col6" class="col_heading level0 col6" >Gain/Loss</th>
+      <th id="T_e1764_level0_col7" class="col_heading level0 col7" >Gain/Loss %</th>
+      <th id="T_e1764_level0_col8" class="col_heading level0 col8" >Average Price</th>
+      <th id="T_e1764_level0_col9" class="col_heading level0 col9" >Sector</th>
+      <th id="T_e1764_level0_col10" class="col_heading level0 col10" >Dividend Yield</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_d2447_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_d2447_row0_col0" class="data row0 col0" >RR.</td>
-      <td id="T_d2447_row0_col1" class="data row0 col1" >Rolls-Royce Holdings</td>
-      <td id="T_d2447_row0_col2" class="data row0 col2" >564</td>
-      <td id="T_d2447_row0_col3" class="data row0 col3" >550.00p</td>
-      <td id="T_d2447_row0_col4" class="data row0 col4" >£3,102.00</td>
-      <td id="T_d2447_row0_col5" class="data row0 col5" >£507.18</td>
-      <td id="T_d2447_row0_col6" class="data row0 col6" >£2,594.82</td>
-      <td id="T_d2447_row0_col7" class="data row0 col7" >511.62%</td>
-      <td id="T_d2447_row0_col8" class="data row0 col8" >89.93p</td>
-      <td id="T_d2447_row0_col9" class="data row0 col9" >Industrials</td>
-      <td id="T_d2447_row0_col10" class="data row0 col10" ></td>
+      <th id="T_e1764_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_e1764_row0_col0" class="data row0 col0" >RR.</td>
+      <td id="T_e1764_row0_col1" class="data row0 col1" >Rolls-Royce Holdings</td>
+      <td id="T_e1764_row0_col2" class="data row0 col2" >564</td>
+      <td id="T_e1764_row0_col3" class="data row0 col3" >550.00p</td>
+      <td id="T_e1764_row0_col4" class="data row0 col4" >£3,102.00</td>
+      <td id="T_e1764_row0_col5" class="data row0 col5" >£507.18</td>
+      <td id="T_e1764_row0_col6" class="data row0 col6" >£2,594.82</td>
+      <td id="T_e1764_row0_col7" class="data row0 col7" >511.62%</td>
+      <td id="T_e1764_row0_col8" class="data row0 col8" >89.93p</td>
+      <td id="T_e1764_row0_col9" class="data row0 col9" >Industrials</td>
+      <td id="T_e1764_row0_col10" class="data row0 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_d2447_row1_col0" class="data row1 col0" >IDS</td>
-      <td id="T_d2447_row1_col1" class="data row1 col1" >International Distribution Services</td>
-      <td id="T_d2447_row1_col2" class="data row1 col2" >504</td>
-      <td id="T_d2447_row1_col3" class="data row1 col3" >339.40p</td>
-      <td id="T_d2447_row1_col4" class="data row1 col4" >£1,710.58</td>
-      <td id="T_d2447_row1_col5" class="data row1 col5" >£1,005.95</td>
-      <td id="T_d2447_row1_col6" class="data row1 col6" >£704.63</td>
-      <td id="T_d2447_row1_col7" class="data row1 col7" >70.05%</td>
-      <td id="T_d2447_row1_col8" class="data row1 col8" >199.59p</td>
-      <td id="T_d2447_row1_col9" class="data row1 col9" >Industrials</td>
-      <td id="T_d2447_row1_col10" class="data row1 col10" >0.57</td>
+      <th id="T_e1764_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_e1764_row1_col0" class="data row1 col0" >IDS</td>
+      <td id="T_e1764_row1_col1" class="data row1 col1" >International Distribution Services</td>
+      <td id="T_e1764_row1_col2" class="data row1 col2" >504</td>
+      <td id="T_e1764_row1_col3" class="data row1 col3" >339.40p</td>
+      <td id="T_e1764_row1_col4" class="data row1 col4" >£1,710.58</td>
+      <td id="T_e1764_row1_col5" class="data row1 col5" >£1,005.95</td>
+      <td id="T_e1764_row1_col6" class="data row1 col6" >£704.63</td>
+      <td id="T_e1764_row1_col7" class="data row1 col7" >70.05%</td>
+      <td id="T_e1764_row1_col8" class="data row1 col8" >199.59p</td>
+      <td id="T_e1764_row1_col9" class="data row1 col9" >Industrials</td>
+      <td id="T_e1764_row1_col10" class="data row1 col10" >0.57</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_d2447_row2_col0" class="data row2 col0" >IAG</td>
-      <td id="T_d2447_row2_col1" class="data row2 col1" >International Consolidated Airlines Group SA</td>
-      <td id="T_d2447_row2_col2" class="data row2 col2" >519</td>
-      <td id="T_d2447_row2_col3" class="data row2 col3" >213.50p</td>
-      <td id="T_d2447_row2_col4" class="data row2 col4" >£1,108.07</td>
-      <td id="T_d2447_row2_col5" class="data row2 col5" >£655.52</td>
-      <td id="T_d2447_row2_col6" class="data row2 col6" >£452.55</td>
-      <td id="T_d2447_row2_col7" class="data row2 col7" >69.04%</td>
-      <td id="T_d2447_row2_col8" class="data row2 col8" >126.30p</td>
-      <td id="T_d2447_row2_col9" class="data row2 col9" >Industrials</td>
-      <td id="T_d2447_row2_col10" class="data row2 col10" >1.64</td>
+      <th id="T_e1764_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_e1764_row2_col0" class="data row2 col0" >IAG</td>
+      <td id="T_e1764_row2_col1" class="data row2 col1" >International Consolidated Airlines Group SA</td>
+      <td id="T_e1764_row2_col2" class="data row2 col2" >519</td>
+      <td id="T_e1764_row2_col3" class="data row2 col3" >213.50p</td>
+      <td id="T_e1764_row2_col4" class="data row2 col4" >£1,108.07</td>
+      <td id="T_e1764_row2_col5" class="data row2 col5" >£655.52</td>
+      <td id="T_e1764_row2_col6" class="data row2 col6" >£452.55</td>
+      <td id="T_e1764_row2_col7" class="data row2 col7" >69.04%</td>
+      <td id="T_e1764_row2_col8" class="data row2 col8" >126.30p</td>
+      <td id="T_e1764_row2_col9" class="data row2 col9" >Industrials</td>
+      <td id="T_e1764_row2_col10" class="data row2 col10" >1.60</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_d2447_row3_col0" class="data row3 col0" >SMDS</td>
-      <td id="T_d2447_row3_col1" class="data row3 col1" >DS Smith</td>
-      <td id="T_d2447_row3_col2" class="data row3 col2" >1082</td>
-      <td id="T_d2447_row3_col3" class="data row3 col3" >553.50p</td>
-      <td id="T_d2447_row3_col4" class="data row3 col4" >£5,988.87</td>
-      <td id="T_d2447_row3_col5" class="data row3 col5" >£3,563.80</td>
-      <td id="T_d2447_row3_col6" class="data row3 col6" >£2,425.07</td>
-      <td id="T_d2447_row3_col7" class="data row3 col7" >68.05%</td>
-      <td id="T_d2447_row3_col8" class="data row3 col8" >329.37p</td>
-      <td id="T_d2447_row3_col9" class="data row3 col9" >Consumer Cyclical</td>
-      <td id="T_d2447_row3_col10" class="data row3 col10" >3.12</td>
+      <th id="T_e1764_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_e1764_row3_col0" class="data row3 col0" >SMDS</td>
+      <td id="T_e1764_row3_col1" class="data row3 col1" >DS Smith</td>
+      <td id="T_e1764_row3_col2" class="data row3 col2" >1082</td>
+      <td id="T_e1764_row3_col3" class="data row3 col3" >553.50p</td>
+      <td id="T_e1764_row3_col4" class="data row3 col4" >£5,988.87</td>
+      <td id="T_e1764_row3_col5" class="data row3 col5" >£3,563.80</td>
+      <td id="T_e1764_row3_col6" class="data row3 col6" >£2,425.07</td>
+      <td id="T_e1764_row3_col7" class="data row3 col7" >68.05%</td>
+      <td id="T_e1764_row3_col8" class="data row3 col8" >329.37p</td>
+      <td id="T_e1764_row3_col9" class="data row3 col9" >Consumer Cyclical</td>
+      <td id="T_e1764_row3_col10" class="data row3 col10" >3.12</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_d2447_row4_col0" class="data row4 col0" >W7L</td>
-      <td id="T_d2447_row4_col1" class="data row4 col1" >Warpaint London</td>
-      <td id="T_d2447_row4_col2" class="data row4 col2" >143</td>
-      <td id="T_d2447_row4_col3" class="data row4 col3" >510.00p</td>
-      <td id="T_d2447_row4_col4" class="data row4 col4" >£729.30</td>
-      <td id="T_d2447_row4_col5" class="data row4 col5" >£447.08</td>
-      <td id="T_d2447_row4_col6" class="data row4 col6" >£282.22</td>
-      <td id="T_d2447_row4_col7" class="data row4 col7" >63.13%</td>
-      <td id="T_d2447_row4_col8" class="data row4 col8" >312.64p</td>
-      <td id="T_d2447_row4_col9" class="data row4 col9" >Consumer Defensive</td>
-      <td id="T_d2447_row4_col10" class="data row4 col10" >1.88</td>
+      <th id="T_e1764_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_e1764_row4_col0" class="data row4 col0" >W7L</td>
+      <td id="T_e1764_row4_col1" class="data row4 col1" >Warpaint London</td>
+      <td id="T_e1764_row4_col2" class="data row4 col2" >143</td>
+      <td id="T_e1764_row4_col3" class="data row4 col3" >510.00p</td>
+      <td id="T_e1764_row4_col4" class="data row4 col4" >£729.30</td>
+      <td id="T_e1764_row4_col5" class="data row4 col5" >£447.08</td>
+      <td id="T_e1764_row4_col6" class="data row4 col6" >£282.22</td>
+      <td id="T_e1764_row4_col7" class="data row4 col7" >63.13%</td>
+      <td id="T_e1764_row4_col8" class="data row4 col8" >312.64p</td>
+      <td id="T_e1764_row4_col9" class="data row4 col9" >Consumer Defensive</td>
+      <td id="T_e1764_row4_col10" class="data row4 col10" >1.86</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_d2447_row5_col0" class="data row5 col0" >TSCO</td>
-      <td id="T_d2447_row5_col1" class="data row5 col1" >Tesco</td>
-      <td id="T_d2447_row5_col2" class="data row5 col2" >1352</td>
-      <td id="T_d2447_row5_col3" class="data row5 col3" >351.90p</td>
-      <td id="T_d2447_row5_col4" class="data row5 col4" >£4,757.69</td>
-      <td id="T_d2447_row5_col5" class="data row5 col5" >£3,359.93</td>
-      <td id="T_d2447_row5_col6" class="data row5 col6" >£1,397.76</td>
-      <td id="T_d2447_row5_col7" class="data row5 col7" >41.60%</td>
-      <td id="T_d2447_row5_col8" class="data row5 col8" >248.52p</td>
-      <td id="T_d2447_row5_col9" class="data row5 col9" >Consumer Defensive</td>
-      <td id="T_d2447_row5_col10" class="data row5 col10" >3.51</td>
+      <th id="T_e1764_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_e1764_row5_col0" class="data row5 col0" >TSCO</td>
+      <td id="T_e1764_row5_col1" class="data row5 col1" >Tesco</td>
+      <td id="T_e1764_row5_col2" class="data row5 col2" >1352</td>
+      <td id="T_e1764_row5_col3" class="data row5 col3" >351.90p</td>
+      <td id="T_e1764_row5_col4" class="data row5 col4" >£4,757.69</td>
+      <td id="T_e1764_row5_col5" class="data row5 col5" >£3,359.93</td>
+      <td id="T_e1764_row5_col6" class="data row5 col6" >£1,397.76</td>
+      <td id="T_e1764_row5_col7" class="data row5 col7" >41.60%</td>
+      <td id="T_e1764_row5_col8" class="data row5 col8" >248.52p</td>
+      <td id="T_e1764_row5_col9" class="data row5 col9" >Consumer Defensive</td>
+      <td id="T_e1764_row5_col10" class="data row5 col10" >3.47</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_d2447_row6_col0" class="data row6 col0" >PFD</td>
-      <td id="T_d2447_row6_col1" class="data row6 col1" >Premier Foods</td>
-      <td id="T_d2447_row6_col2" class="data row6 col2" >1920</td>
-      <td id="T_d2447_row6_col3" class="data row6 col3" >189.80p</td>
-      <td id="T_d2447_row6_col4" class="data row6 col4" >£3,644.16</td>
-      <td id="T_d2447_row6_col5" class="data row6 col5" >£2,631.48</td>
-      <td id="T_d2447_row6_col6" class="data row6 col6" >£1,012.68</td>
-      <td id="T_d2447_row6_col7" class="data row6 col7" >38.48%</td>
-      <td id="T_d2447_row6_col8" class="data row6 col8" >137.06p</td>
-      <td id="T_d2447_row6_col9" class="data row6 col9" >Consumer Defensive</td>
-      <td id="T_d2447_row6_col10" class="data row6 col10" >0.91</td>
+      <th id="T_e1764_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_e1764_row6_col0" class="data row6 col0" >PFD</td>
+      <td id="T_e1764_row6_col1" class="data row6 col1" >Premier Foods</td>
+      <td id="T_e1764_row6_col2" class="data row6 col2" >1920</td>
+      <td id="T_e1764_row6_col3" class="data row6 col3" >189.80p</td>
+      <td id="T_e1764_row6_col4" class="data row6 col4" >£3,644.16</td>
+      <td id="T_e1764_row6_col5" class="data row6 col5" >£2,631.48</td>
+      <td id="T_e1764_row6_col6" class="data row6 col6" >£1,012.68</td>
+      <td id="T_e1764_row6_col7" class="data row6 col7" >38.48%</td>
+      <td id="T_e1764_row6_col8" class="data row6 col8" >137.06p</td>
+      <td id="T_e1764_row6_col9" class="data row6 col9" >Consumer Defensive</td>
+      <td id="T_e1764_row6_col10" class="data row6 col10" >0.91</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row7" class="row_heading level0 row7" >7</th>
-      <td id="T_d2447_row7_col0" class="data row7 col0" >TW.</td>
-      <td id="T_d2447_row7_col1" class="data row7 col1" >Taylor Wimpey</td>
-      <td id="T_d2447_row7_col2" class="data row7 col2" >727</td>
-      <td id="T_d2447_row7_col3" class="data row7 col3" >146.80p</td>
-      <td id="T_d2447_row7_col4" class="data row7 col4" >£1,067.24</td>
-      <td id="T_d2447_row7_col5" class="data row7 col5" >£798.90</td>
-      <td id="T_d2447_row7_col6" class="data row7 col6" >£268.34</td>
-      <td id="T_d2447_row7_col7" class="data row7 col7" >33.59%</td>
-      <td id="T_d2447_row7_col8" class="data row7 col8" >109.89p</td>
-      <td id="T_d2447_row7_col9" class="data row7 col9" >Consumer Cyclical</td>
-      <td id="T_d2447_row7_col10" class="data row7 col10" >8.80</td>
+      <th id="T_e1764_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_e1764_row7_col0" class="data row7 col0" >TW.</td>
+      <td id="T_e1764_row7_col1" class="data row7 col1" >Taylor Wimpey</td>
+      <td id="T_e1764_row7_col2" class="data row7 col2" >727</td>
+      <td id="T_e1764_row7_col3" class="data row7 col3" >146.80p</td>
+      <td id="T_e1764_row7_col4" class="data row7 col4" >£1,067.24</td>
+      <td id="T_e1764_row7_col5" class="data row7 col5" >£798.90</td>
+      <td id="T_e1764_row7_col6" class="data row7 col6" >£268.34</td>
+      <td id="T_e1764_row7_col7" class="data row7 col7" >33.59%</td>
+      <td id="T_e1764_row7_col8" class="data row7 col8" >109.89p</td>
+      <td id="T_e1764_row7_col9" class="data row7 col9" >Consumer Cyclical</td>
+      <td id="T_e1764_row7_col10" class="data row7 col10" >8.40</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row8" class="row_heading level0 row8" >8</th>
-      <td id="T_d2447_row8_col0" class="data row8 col0" >ABF</td>
-      <td id="T_d2447_row8_col1" class="data row8 col1" >Associated British Foods</td>
-      <td id="T_d2447_row8_col2" class="data row8 col2" >95</td>
-      <td id="T_d2447_row8_col3" class="data row8 col3" >2,305.00p</td>
-      <td id="T_d2447_row8_col4" class="data row8 col4" >£2,189.75</td>
-      <td id="T_d2447_row8_col5" class="data row8 col5" >£1,703.76</td>
-      <td id="T_d2447_row8_col6" class="data row8 col6" >£485.99</td>
-      <td id="T_d2447_row8_col7" class="data row8 col7" >28.52%</td>
-      <td id="T_d2447_row8_col8" class="data row8 col8" >1,793.43p</td>
-      <td id="T_d2447_row8_col9" class="data row8 col9" >Consumer Defensive</td>
-      <td id="T_d2447_row8_col10" class="data row8 col10" >3.22</td>
+      <th id="T_e1764_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_e1764_row8_col0" class="data row8 col0" >ABF</td>
+      <td id="T_e1764_row8_col1" class="data row8 col1" >Associated British Foods</td>
+      <td id="T_e1764_row8_col2" class="data row8 col2" >95</td>
+      <td id="T_e1764_row8_col3" class="data row8 col3" >2,305.00p</td>
+      <td id="T_e1764_row8_col4" class="data row8 col4" >£2,189.75</td>
+      <td id="T_e1764_row8_col5" class="data row8 col5" >£1,703.76</td>
+      <td id="T_e1764_row8_col6" class="data row8 col6" >£485.99</td>
+      <td id="T_e1764_row8_col7" class="data row8 col7" >28.52%</td>
+      <td id="T_e1764_row8_col8" class="data row8 col8" >1,793.43p</td>
+      <td id="T_e1764_row8_col9" class="data row8 col9" >Consumer Defensive</td>
+      <td id="T_e1764_row8_col10" class="data row8 col10" >3.18</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row9" class="row_heading level0 row9" >9</th>
-      <td id="T_d2447_row9_col0" class="data row9 col0" >BA.</td>
-      <td id="T_d2447_row9_col1" class="data row9 col1" >BAE Systems</td>
-      <td id="T_d2447_row9_col2" class="data row9 col2" >1073</td>
-      <td id="T_d2447_row9_col3" class="data row9 col3" >1,247.50p</td>
-      <td id="T_d2447_row9_col4" class="data row9 col4" >£13,385.68</td>
-      <td id="T_d2447_row9_col5" class="data row9 col5" >£10,476.27</td>
-      <td id="T_d2447_row9_col6" class="data row9 col6" >£2,909.41</td>
-      <td id="T_d2447_row9_col7" class="data row9 col7" >27.77%</td>
-      <td id="T_d2447_row9_col8" class="data row9 col8" >976.35p</td>
-      <td id="T_d2447_row9_col9" class="data row9 col9" >Industrials</td>
-      <td id="T_d2447_row9_col10" class="data row9 col10" >2.60</td>
+      <th id="T_e1764_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_e1764_row9_col0" class="data row9 col0" >BA.</td>
+      <td id="T_e1764_row9_col1" class="data row9 col1" >BAE Systems</td>
+      <td id="T_e1764_row9_col2" class="data row9 col2" >1073</td>
+      <td id="T_e1764_row9_col3" class="data row9 col3" >1,247.50p</td>
+      <td id="T_e1764_row9_col4" class="data row9 col4" >£13,385.68</td>
+      <td id="T_e1764_row9_col5" class="data row9 col5" >£10,476.27</td>
+      <td id="T_e1764_row9_col6" class="data row9 col6" >£2,909.41</td>
+      <td id="T_e1764_row9_col7" class="data row9 col7" >27.77%</td>
+      <td id="T_e1764_row9_col8" class="data row9 col8" >976.35p</td>
+      <td id="T_e1764_row9_col9" class="data row9 col9" >Industrials</td>
+      <td id="T_e1764_row9_col10" class="data row9 col10" >2.60</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row10" class="row_heading level0 row10" >10</th>
-      <td id="T_d2447_row10_col0" class="data row10 col0" >MKS</td>
-      <td id="T_d2447_row10_col1" class="data row10 col1" >Marks & Spencer Group</td>
-      <td id="T_d2447_row10_col2" class="data row10 col2" >315</td>
-      <td id="T_d2447_row10_col3" class="data row10 col3" >381.90p</td>
-      <td id="T_d2447_row10_col4" class="data row10 col4" >£1,202.99</td>
-      <td id="T_d2447_row10_col5" class="data row10 col5" >£1,000.39</td>
-      <td id="T_d2447_row10_col6" class="data row10 col6" >£202.60</td>
-      <td id="T_d2447_row10_col7" class="data row10 col7" >20.25%</td>
-      <td id="T_d2447_row10_col8" class="data row10 col8" >317.58p</td>
-      <td id="T_d2447_row10_col9" class="data row10 col9" >Consumer Cyclical</td>
-      <td id="T_d2447_row10_col10" class="data row10 col10" >0.92</td>
+      <th id="T_e1764_level0_row10" class="row_heading level0 row10" >10</th>
+      <td id="T_e1764_row10_col0" class="data row10 col0" >MKS</td>
+      <td id="T_e1764_row10_col1" class="data row10 col1" >Marks & Spencer Group</td>
+      <td id="T_e1764_row10_col2" class="data row10 col2" >315</td>
+      <td id="T_e1764_row10_col3" class="data row10 col3" >381.90p</td>
+      <td id="T_e1764_row10_col4" class="data row10 col4" >£1,202.99</td>
+      <td id="T_e1764_row10_col5" class="data row10 col5" >£1,000.39</td>
+      <td id="T_e1764_row10_col6" class="data row10 col6" >£202.60</td>
+      <td id="T_e1764_row10_col7" class="data row10 col7" >20.25%</td>
+      <td id="T_e1764_row10_col8" class="data row10 col8" >317.58p</td>
+      <td id="T_e1764_row10_col9" class="data row10 col9" >Consumer Cyclical</td>
+      <td id="T_e1764_row10_col10" class="data row10 col10" >0.89</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row11" class="row_heading level0 row11" >11</th>
-      <td id="T_d2447_row11_col0" class="data row11 col0" >JET2</td>
-      <td id="T_d2447_row11_col1" class="data row11 col1" >Jet2  Ordinary Shares</td>
-      <td id="T_d2447_row11_col2" class="data row11 col2" >317</td>
-      <td id="T_d2447_row11_col3" class="data row11 col3" >1,448.00p</td>
-      <td id="T_d2447_row11_col4" class="data row11 col4" >£4,590.16</td>
-      <td id="T_d2447_row11_col5" class="data row11 col5" >£4,013.71</td>
-      <td id="T_d2447_row11_col6" class="data row11 col6" >£576.45</td>
-      <td id="T_d2447_row11_col7" class="data row11 col7" >14.36%</td>
-      <td id="T_d2447_row11_col8" class="data row11 col8" >1,266.15p</td>
-      <td id="T_d2447_row11_col9" class="data row11 col9" >Consumer Cyclical</td>
-      <td id="T_d2447_row11_col10" class="data row11 col10" >1.04</td>
+      <th id="T_e1764_level0_row11" class="row_heading level0 row11" >11</th>
+      <td id="T_e1764_row11_col0" class="data row11 col0" >JET2</td>
+      <td id="T_e1764_row11_col1" class="data row11 col1" >Jet2  Ordinary Shares</td>
+      <td id="T_e1764_row11_col2" class="data row11 col2" >317</td>
+      <td id="T_e1764_row11_col3" class="data row11 col3" >1,448.00p</td>
+      <td id="T_e1764_row11_col4" class="data row11 col4" >£4,590.16</td>
+      <td id="T_e1764_row11_col5" class="data row11 col5" >£4,013.71</td>
+      <td id="T_e1764_row11_col6" class="data row11 col6" >£576.45</td>
+      <td id="T_e1764_row11_col7" class="data row11 col7" >14.36%</td>
+      <td id="T_e1764_row11_col8" class="data row11 col8" >1,266.15p</td>
+      <td id="T_e1764_row11_col9" class="data row11 col9" >Consumer Cyclical</td>
+      <td id="T_e1764_row11_col10" class="data row11 col10" >1.04</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row12" class="row_heading level0 row12" >12</th>
-      <td id="T_d2447_row12_col0" class="data row12 col0" >PHE</td>
-      <td id="T_d2447_row12_col1" class="data row12 col1" >PowerHouse Energy Group</td>
-      <td id="T_d2447_row12_col2" class="data row12 col2" >45308</td>
-      <td id="T_d2447_row12_col3" class="data row12 col3" >1.00p</td>
-      <td id="T_d2447_row12_col4" class="data row12 col4" >£453.08</td>
-      <td id="T_d2447_row12_col5" class="data row12 col5" >£403.98</td>
-      <td id="T_d2447_row12_col6" class="data row12 col6" >£49.10</td>
-      <td id="T_d2447_row12_col7" class="data row12 col7" >12.15%</td>
-      <td id="T_d2447_row12_col8" class="data row12 col8" >0.89p</td>
-      <td id="T_d2447_row12_col9" class="data row12 col9" >Industrials</td>
-      <td id="T_d2447_row12_col10" class="data row12 col10" ></td>
+      <th id="T_e1764_level0_row12" class="row_heading level0 row12" >12</th>
+      <td id="T_e1764_row12_col0" class="data row12 col0" >PHE</td>
+      <td id="T_e1764_row12_col1" class="data row12 col1" >PowerHouse Energy Group</td>
+      <td id="T_e1764_row12_col2" class="data row12 col2" >45308</td>
+      <td id="T_e1764_row12_col3" class="data row12 col3" >1.00p</td>
+      <td id="T_e1764_row12_col4" class="data row12 col4" >£453.08</td>
+      <td id="T_e1764_row12_col5" class="data row12 col5" >£403.98</td>
+      <td id="T_e1764_row12_col6" class="data row12 col6" >£49.10</td>
+      <td id="T_e1764_row12_col7" class="data row12 col7" >12.15%</td>
+      <td id="T_e1764_row12_col8" class="data row12 col8" >0.89p</td>
+      <td id="T_e1764_row12_col9" class="data row12 col9" >Industrials</td>
+      <td id="T_e1764_row12_col10" class="data row12 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row13" class="row_heading level0 row13" >13</th>
-      <td id="T_d2447_row13_col0" class="data row13 col0" >BARC</td>
-      <td id="T_d2447_row13_col1" class="data row13 col1" >Barclays</td>
-      <td id="T_d2447_row13_col2" class="data row13 col2" >274</td>
-      <td id="T_d2447_row13_col3" class="data row13 col3" >243.50p</td>
-      <td id="T_d2447_row13_col4" class="data row13 col4" >£667.19</td>
-      <td id="T_d2447_row13_col5" class="data row13 col5" >£599.57</td>
-      <td id="T_d2447_row13_col6" class="data row13 col6" >£67.62</td>
-      <td id="T_d2447_row13_col7" class="data row13 col7" >11.28%</td>
-      <td id="T_d2447_row13_col8" class="data row13 col8" >218.82p</td>
-      <td id="T_d2447_row13_col9" class="data row13 col9" >Financial Services</td>
-      <td id="T_d2447_row13_col10" class="data row13 col10" >3.11</td>
+      <th id="T_e1764_level0_row13" class="row_heading level0 row13" >13</th>
+      <td id="T_e1764_row13_col0" class="data row13 col0" >BARC</td>
+      <td id="T_e1764_row13_col1" class="data row13 col1" >Barclays</td>
+      <td id="T_e1764_row13_col2" class="data row13 col2" >274</td>
+      <td id="T_e1764_row13_col3" class="data row13 col3" >243.50p</td>
+      <td id="T_e1764_row13_col4" class="data row13 col4" >£667.19</td>
+      <td id="T_e1764_row13_col5" class="data row13 col5" >£599.57</td>
+      <td id="T_e1764_row13_col6" class="data row13 col6" >£67.62</td>
+      <td id="T_e1764_row13_col7" class="data row13 col7" >11.28%</td>
+      <td id="T_e1764_row13_col8" class="data row13 col8" >218.82p</td>
+      <td id="T_e1764_row13_col9" class="data row13 col9" >Financial Services</td>
+      <td id="T_e1764_row13_col10" class="data row13 col10" >2.92</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row14" class="row_heading level0 row14" >14</th>
-      <td id="T_d2447_row14_col0" class="data row14 col0" >LLOY</td>
-      <td id="T_d2447_row14_col1" class="data row14 col1" >Lloyds Banking Group</td>
-      <td id="T_d2447_row14_col2" class="data row14 col2" >2185</td>
-      <td id="T_d2447_row14_col3" class="data row14 col3" >54.94p</td>
-      <td id="T_d2447_row14_col4" class="data row14 col4" >£1,200.44</td>
-      <td id="T_d2447_row14_col5" class="data row14 col5" >£1,086.83</td>
-      <td id="T_d2447_row14_col6" class="data row14 col6" >£113.61</td>
-      <td id="T_d2447_row14_col7" class="data row14 col7" >10.45%</td>
-      <td id="T_d2447_row14_col8" class="data row14 col8" >49.74p</td>
-      <td id="T_d2447_row14_col9" class="data row14 col9" >Financial Services</td>
-      <td id="T_d2447_row14_col10" class="data row14 col10" >5.41</td>
+      <th id="T_e1764_level0_row14" class="row_heading level0 row14" >14</th>
+      <td id="T_e1764_row14_col0" class="data row14 col0" >LLOY</td>
+      <td id="T_e1764_row14_col1" class="data row14 col1" >Lloyds Banking Group</td>
+      <td id="T_e1764_row14_col2" class="data row14 col2" >2185</td>
+      <td id="T_e1764_row14_col3" class="data row14 col3" >54.94p</td>
+      <td id="T_e1764_row14_col4" class="data row14 col4" >£1,200.44</td>
+      <td id="T_e1764_row14_col5" class="data row14 col5" >£1,086.83</td>
+      <td id="T_e1764_row14_col6" class="data row14 col6" >£113.61</td>
+      <td id="T_e1764_row14_col7" class="data row14 col7" >10.45%</td>
+      <td id="T_e1764_row14_col8" class="data row14 col8" >49.74p</td>
+      <td id="T_e1764_row14_col9" class="data row14 col9" >Financial Services</td>
+      <td id="T_e1764_row14_col10" class="data row14 col10" >5.08</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row15" class="row_heading level0 row15" >15</th>
-      <td id="T_d2447_row15_col0" class="data row15 col0" >KGF</td>
-      <td id="T_d2447_row15_col1" class="data row15 col1" >Kingfisher</td>
-      <td id="T_d2447_row15_col2" class="data row15 col2" >365</td>
-      <td id="T_d2447_row15_col3" class="data row15 col3" >299.20p</td>
-      <td id="T_d2447_row15_col4" class="data row15 col4" >£1,092.08</td>
-      <td id="T_d2447_row15_col5" class="data row15 col5" >£998.31</td>
-      <td id="T_d2447_row15_col6" class="data row15 col6" >£93.77</td>
-      <td id="T_d2447_row15_col7" class="data row15 col7" >9.39%</td>
-      <td id="T_d2447_row15_col8" class="data row15 col8" >273.51p</td>
-      <td id="T_d2447_row15_col9" class="data row15 col9" >Consumer Cyclical</td>
-      <td id="T_d2447_row15_col10" class="data row15 col10" >5.41</td>
+      <th id="T_e1764_level0_row15" class="row_heading level0 row15" >15</th>
+      <td id="T_e1764_row15_col0" class="data row15 col0" >KGF</td>
+      <td id="T_e1764_row15_col1" class="data row15 col1" >Kingfisher</td>
+      <td id="T_e1764_row15_col2" class="data row15 col2" >365</td>
+      <td id="T_e1764_row15_col3" class="data row15 col3" >299.20p</td>
+      <td id="T_e1764_row15_col4" class="data row15 col4" >£1,092.08</td>
+      <td id="T_e1764_row15_col5" class="data row15 col5" >£998.31</td>
+      <td id="T_e1764_row15_col6" class="data row15 col6" >£93.77</td>
+      <td id="T_e1764_row15_col7" class="data row15 col7" >9.39%</td>
+      <td id="T_e1764_row15_col8" class="data row15 col8" >273.51p</td>
+      <td id="T_e1764_row15_col9" class="data row15 col9" >Consumer Cyclical</td>
+      <td id="T_e1764_row15_col10" class="data row15 col10" >5.20</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row16" class="row_heading level0 row16" >16</th>
-      <td id="T_d2447_row16_col0" class="data row16 col0" >CRN</td>
-      <td id="T_d2447_row16_col1" class="data row16 col1" >Cairn Homes</td>
-      <td id="T_d2447_row16_col2" class="data row16 col2" >399</td>
-      <td id="T_d2447_row16_col3" class="data row16 col3" >179.80p</td>
-      <td id="T_d2447_row16_col4" class="data row16 col4" >£717.40</td>
-      <td id="T_d2447_row16_col5" class="data row16 col5" >£663.76</td>
-      <td id="T_d2447_row16_col6" class="data row16 col6" >£53.64</td>
-      <td id="T_d2447_row16_col7" class="data row16 col7" >8.08%</td>
-      <td id="T_d2447_row16_col8" class="data row16 col8" >166.36p</td>
-      <td id="T_d2447_row16_col9" class="data row16 col9" >Consumer Cyclical</td>
-      <td id="T_d2447_row16_col10" class="data row16 col10" >3.68</td>
+      <th id="T_e1764_level0_row16" class="row_heading level0 row16" >16</th>
+      <td id="T_e1764_row16_col0" class="data row16 col0" >CRN</td>
+      <td id="T_e1764_row16_col1" class="data row16 col1" >Cairn Homes</td>
+      <td id="T_e1764_row16_col2" class="data row16 col2" >399</td>
+      <td id="T_e1764_row16_col3" class="data row16 col3" >179.80p</td>
+      <td id="T_e1764_row16_col4" class="data row16 col4" >£717.40</td>
+      <td id="T_e1764_row16_col5" class="data row16 col5" >£663.76</td>
+      <td id="T_e1764_row16_col6" class="data row16 col6" >£53.64</td>
+      <td id="T_e1764_row16_col7" class="data row16 col7" >8.08%</td>
+      <td id="T_e1764_row16_col8" class="data row16 col8" >166.36p</td>
+      <td id="T_e1764_row16_col9" class="data row16 col9" >Consumer Cyclical</td>
+      <td id="T_e1764_row16_col10" class="data row16 col10" >3.68</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row17" class="row_heading level0 row17" >17</th>
-      <td id="T_d2447_row17_col0" class="data row17 col0" >EZJ</td>
-      <td id="T_d2447_row17_col1" class="data row17 col1" >easyJet</td>
-      <td id="T_d2447_row17_col2" class="data row17 col2" >715</td>
-      <td id="T_d2447_row17_col3" class="data row17 col3" >522.20p</td>
-      <td id="T_d2447_row17_col4" class="data row17 col4" >£3,733.73</td>
-      <td id="T_d2447_row17_col5" class="data row17 col5" >£3,711.69</td>
-      <td id="T_d2447_row17_col6" class="data row17 col6" >£22.04</td>
-      <td id="T_d2447_row17_col7" class="data row17 col7" >0.59%</td>
-      <td id="T_d2447_row17_col8" class="data row17 col8" >519.12p</td>
-      <td id="T_d2447_row17_col9" class="data row17 col9" >Industrials</td>
-      <td id="T_d2447_row17_col10" class="data row17 col10" >0.83</td>
+      <th id="T_e1764_level0_row17" class="row_heading level0 row17" >17</th>
+      <td id="T_e1764_row17_col0" class="data row17 col0" >EZJ</td>
+      <td id="T_e1764_row17_col1" class="data row17 col1" >easyJet</td>
+      <td id="T_e1764_row17_col2" class="data row17 col2" >715</td>
+      <td id="T_e1764_row17_col3" class="data row17 col3" >522.20p</td>
+      <td id="T_e1764_row17_col4" class="data row17 col4" >£3,733.73</td>
+      <td id="T_e1764_row17_col5" class="data row17 col5" >£3,711.69</td>
+      <td id="T_e1764_row17_col6" class="data row17 col6" >£22.04</td>
+      <td id="T_e1764_row17_col7" class="data row17 col7" >0.59%</td>
+      <td id="T_e1764_row17_col8" class="data row17 col8" >519.12p</td>
+      <td id="T_e1764_row17_col9" class="data row17 col9" >Industrials</td>
+      <td id="T_e1764_row17_col10" class="data row17 col10" >0.83</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row18" class="row_heading level0 row18" >18</th>
-      <td id="T_d2447_row18_col0" class="data row18 col0" >GSK</td>
-      <td id="T_d2447_row18_col1" class="data row18 col1" >GSK</td>
-      <td id="T_d2447_row18_col2" class="data row18 col2" >69</td>
-      <td id="T_d2447_row18_col3" class="data row18 col3" >1,417.00p</td>
-      <td id="T_d2447_row18_col4" class="data row18 col4" >£977.73</td>
-      <td id="T_d2447_row18_col5" class="data row18 col5" >£994.09</td>
-      <td id="T_d2447_row18_col6" class="data row18 col6" >£-16.36</td>
-      <td id="T_d2447_row18_col7" class="data row18 col7" >-1.65%</td>
-      <td id="T_d2447_row18_col8" class="data row18 col8" >1,440.71p</td>
-      <td id="T_d2447_row18_col9" class="data row18 col9" >Healthcare</td>
-      <td id="T_d2447_row18_col10" class="data row18 col10" >4.64</td>
+      <th id="T_e1764_level0_row18" class="row_heading level0 row18" >18</th>
+      <td id="T_e1764_row18_col0" class="data row18 col0" >GSK</td>
+      <td id="T_e1764_row18_col1" class="data row18 col1" >GSK</td>
+      <td id="T_e1764_row18_col2" class="data row18 col2" >69</td>
+      <td id="T_e1764_row18_col3" class="data row18 col3" >1,417.00p</td>
+      <td id="T_e1764_row18_col4" class="data row18 col4" >£977.73</td>
+      <td id="T_e1764_row18_col5" class="data row18 col5" >£994.09</td>
+      <td id="T_e1764_row18_col6" class="data row18 col6" >£-16.36</td>
+      <td id="T_e1764_row18_col7" class="data row18 col7" >-1.65%</td>
+      <td id="T_e1764_row18_col8" class="data row18 col8" >1,440.71p</td>
+      <td id="T_e1764_row18_col9" class="data row18 col9" >Healthcare</td>
+      <td id="T_e1764_row18_col10" class="data row18 col10" >4.52</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row19" class="row_heading level0 row19" >19</th>
-      <td id="T_d2447_row19_col0" class="data row19 col0" >CNA</td>
-      <td id="T_d2447_row19_col1" class="data row19 col1" >Centrica</td>
-      <td id="T_d2447_row19_col2" class="data row19 col2" >2315</td>
-      <td id="T_d2447_row19_col3" class="data row19 col3" >116.90p</td>
-      <td id="T_d2447_row19_col4" class="data row19 col4" >£2,706.24</td>
-      <td id="T_d2447_row19_col5" class="data row19 col5" >£2,759.21</td>
-      <td id="T_d2447_row19_col6" class="data row19 col6" >£-52.97</td>
-      <td id="T_d2447_row19_col7" class="data row19 col7" >-1.92%</td>
-      <td id="T_d2447_row19_col8" class="data row19 col8" >119.19p</td>
-      <td id="T_d2447_row19_col9" class="data row19 col9" >Utilities</td>
-      <td id="T_d2447_row19_col10" class="data row19 col10" >3.14</td>
+      <th id="T_e1764_level0_row19" class="row_heading level0 row19" >19</th>
+      <td id="T_e1764_row19_col0" class="data row19 col0" >CNA</td>
+      <td id="T_e1764_row19_col1" class="data row19 col1" >Centrica</td>
+      <td id="T_e1764_row19_col2" class="data row19 col2" >2315</td>
+      <td id="T_e1764_row19_col3" class="data row19 col3" >116.90p</td>
+      <td id="T_e1764_row19_col4" class="data row19 col4" >£2,706.24</td>
+      <td id="T_e1764_row19_col5" class="data row19 col5" >£2,759.21</td>
+      <td id="T_e1764_row19_col6" class="data row19 col6" >£-52.97</td>
+      <td id="T_e1764_row19_col7" class="data row19 col7" >-1.92%</td>
+      <td id="T_e1764_row19_col8" class="data row19 col8" >119.19p</td>
+      <td id="T_e1764_row19_col9" class="data row19 col9" >Utilities</td>
+      <td id="T_e1764_row19_col10" class="data row19 col10" >3.12</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row20" class="row_heading level0 row20" >20</th>
-      <td id="T_d2447_row20_col0" class="data row20 col0" >ORIT</td>
-      <td id="T_d2447_row20_col1" class="data row20 col1" >Octopus Renewables Infrastructure Ord</td>
-      <td id="T_d2447_row20_col2" class="data row20 col2" >829</td>
-      <td id="T_d2447_row20_col3" class="data row20 col3" >76.30p</td>
-      <td id="T_d2447_row20_col4" class="data row20 col4" >£632.53</td>
-      <td id="T_d2447_row20_col5" class="data row20 col5" >£659.85</td>
-      <td id="T_d2447_row20_col6" class="data row20 col6" >£-27.32</td>
-      <td id="T_d2447_row20_col7" class="data row20 col7" >-4.14%</td>
-      <td id="T_d2447_row20_col8" class="data row20 col8" >79.60p</td>
-      <td id="T_d2447_row20_col9" class="data row20 col9" >Financial Services</td>
-      <td id="T_d2447_row20_col10" class="data row20 col10" >9.45</td>
+      <th id="T_e1764_level0_row20" class="row_heading level0 row20" >20</th>
+      <td id="T_e1764_row20_col0" class="data row20 col0" >ORIT</td>
+      <td id="T_e1764_row20_col1" class="data row20 col1" >Octopus Renewables Infrastructure Ord</td>
+      <td id="T_e1764_row20_col2" class="data row20 col2" >829</td>
+      <td id="T_e1764_row20_col3" class="data row20 col3" >76.30p</td>
+      <td id="T_e1764_row20_col4" class="data row20 col4" >£632.53</td>
+      <td id="T_e1764_row20_col5" class="data row20 col5" >£659.85</td>
+      <td id="T_e1764_row20_col6" class="data row20 col6" >£-27.32</td>
+      <td id="T_e1764_row20_col7" class="data row20 col7" >-4.14%</td>
+      <td id="T_e1764_row20_col8" class="data row20 col8" >79.60p</td>
+      <td id="T_e1764_row20_col9" class="data row20 col9" ></td>
+      <td id="T_e1764_row20_col10" class="data row20 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row21" class="row_heading level0 row21" >21</th>
-      <td id="T_d2447_row21_col0" class="data row21 col0" >PHNX</td>
-      <td id="T_d2447_row21_col1" class="data row21 col1" >Phoenix Group Holdings</td>
-      <td id="T_d2447_row21_col2" class="data row21 col2" >608</td>
-      <td id="T_d2447_row21_col3" class="data row21 col3" >501.00p</td>
-      <td id="T_d2447_row21_col4" class="data row21 col4" >£3,046.08</td>
-      <td id="T_d2447_row21_col5" class="data row21 col5" >£3,194.81</td>
-      <td id="T_d2447_row21_col6" class="data row21 col6" >£-148.73</td>
-      <td id="T_d2447_row21_col7" class="data row21 col7" >-4.66%</td>
-      <td id="T_d2447_row21_col8" class="data row21 col8" >525.46p</td>
-      <td id="T_d2447_row21_col9" class="data row21 col9" >Financial Services</td>
-      <td id="T_d2447_row21_col10" class="data row21 col10" >11.09</td>
+      <th id="T_e1764_level0_row21" class="row_heading level0 row21" >21</th>
+      <td id="T_e1764_row21_col0" class="data row21 col0" >PHNX</td>
+      <td id="T_e1764_row21_col1" class="data row21 col1" >Phoenix Group Holdings</td>
+      <td id="T_e1764_row21_col2" class="data row21 col2" >608</td>
+      <td id="T_e1764_row21_col3" class="data row21 col3" >501.00p</td>
+      <td id="T_e1764_row21_col4" class="data row21 col4" >£3,046.08</td>
+      <td id="T_e1764_row21_col5" class="data row21 col5" >£3,194.81</td>
+      <td id="T_e1764_row21_col6" class="data row21 col6" >£-148.73</td>
+      <td id="T_e1764_row21_col7" class="data row21 col7" >-4.66%</td>
+      <td id="T_e1764_row21_col8" class="data row21 col8" >525.46p</td>
+      <td id="T_e1764_row21_col9" class="data row21 col9" >Financial Services</td>
+      <td id="T_e1764_row21_col10" class="data row21 col10" >10.70</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row22" class="row_heading level0 row22" >22</th>
-      <td id="T_d2447_row22_col0" class="data row22 col0" >UKW</td>
-      <td id="T_d2447_row22_col1" class="data row22 col1" >Greencoat UK Wind</td>
-      <td id="T_d2447_row22_col2" class="data row22 col2" >348</td>
-      <td id="T_d2447_row22_col3" class="data row22 col3" >134.50p</td>
-      <td id="T_d2447_row22_col4" class="data row22 col4" >£468.06</td>
-      <td id="T_d2447_row22_col5" class="data row22 col5" >£500.55</td>
-      <td id="T_d2447_row22_col6" class="data row22 col6" >£-32.49</td>
-      <td id="T_d2447_row22_col7" class="data row22 col7" >-6.49%</td>
-      <td id="T_d2447_row22_col8" class="data row22 col8" >143.84p</td>
-      <td id="T_d2447_row22_col9" class="data row22 col9" >Utilities</td>
-      <td id="T_d2447_row22_col10" class="data row22 col10" >8.82</td>
+      <th id="T_e1764_level0_row22" class="row_heading level0 row22" >22</th>
+      <td id="T_e1764_row22_col0" class="data row22 col0" >UKW</td>
+      <td id="T_e1764_row22_col1" class="data row22 col1" >Greencoat UK Wind</td>
+      <td id="T_e1764_row22_col2" class="data row22 col2" >348</td>
+      <td id="T_e1764_row22_col3" class="data row22 col3" >134.50p</td>
+      <td id="T_e1764_row22_col4" class="data row22 col4" >£468.06</td>
+      <td id="T_e1764_row22_col5" class="data row22 col5" >£500.55</td>
+      <td id="T_e1764_row22_col6" class="data row22 col6" >£-32.49</td>
+      <td id="T_e1764_row22_col7" class="data row22 col7" >-6.49%</td>
+      <td id="T_e1764_row22_col8" class="data row22 col8" >143.84p</td>
+      <td id="T_e1764_row22_col9" class="data row22 col9" ></td>
+      <td id="T_e1764_row22_col10" class="data row22 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row23" class="row_heading level0 row23" >23</th>
-      <td id="T_d2447_row23_col0" class="data row23 col0" >BAB</td>
-      <td id="T_d2447_row23_col1" class="data row23 col1" >Babcock International Group</td>
-      <td id="T_d2447_row23_col2" class="data row23 col2" >155</td>
-      <td id="T_d2447_row23_col3" class="data row23 col3" >466.00p</td>
-      <td id="T_d2447_row23_col4" class="data row23 col4" >£722.30</td>
-      <td id="T_d2447_row23_col5" class="data row23 col5" >£801.93</td>
-      <td id="T_d2447_row23_col6" class="data row23 col6" >£-79.63</td>
-      <td id="T_d2447_row23_col7" class="data row23 col7" >-9.93%</td>
-      <td id="T_d2447_row23_col8" class="data row23 col8" >517.37p</td>
-      <td id="T_d2447_row23_col9" class="data row23 col9" >Industrials</td>
-      <td id="T_d2447_row23_col10" class="data row23 col10" >1.00</td>
+      <th id="T_e1764_level0_row23" class="row_heading level0 row23" >23</th>
+      <td id="T_e1764_row23_col0" class="data row23 col0" >BAB</td>
+      <td id="T_e1764_row23_col1" class="data row23 col1" >Babcock International Group</td>
+      <td id="T_e1764_row23_col2" class="data row23 col2" >155</td>
+      <td id="T_e1764_row23_col3" class="data row23 col3" >466.00p</td>
+      <td id="T_e1764_row23_col4" class="data row23 col4" >£722.30</td>
+      <td id="T_e1764_row23_col5" class="data row23 col5" >£801.93</td>
+      <td id="T_e1764_row23_col6" class="data row23 col6" >£-79.63</td>
+      <td id="T_e1764_row23_col7" class="data row23 col7" >-9.93%</td>
+      <td id="T_e1764_row23_col8" class="data row23 col8" >517.37p</td>
+      <td id="T_e1764_row23_col9" class="data row23 col9" >Industrials</td>
+      <td id="T_e1764_row23_col10" class="data row23 col10" >1.00</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row24" class="row_heading level0 row24" >24</th>
-      <td id="T_d2447_row24_col0" class="data row24 col0" >GENF</td>
-      <td id="T_d2447_row24_col1" class="data row24 col1" >Genflow Biosciences</td>
-      <td id="T_d2447_row24_col2" class="data row24 col2" >10529</td>
-      <td id="T_d2447_row24_col3" class="data row24 col3" >1.70p</td>
-      <td id="T_d2447_row24_col4" class="data row24 col4" >£178.99</td>
-      <td id="T_d2447_row24_col5" class="data row24 col5" >£200.00</td>
-      <td id="T_d2447_row24_col6" class="data row24 col6" >£-21.01</td>
-      <td id="T_d2447_row24_col7" class="data row24 col7" >-10.51%</td>
-      <td id="T_d2447_row24_col8" class="data row24 col8" >1.90p</td>
-      <td id="T_d2447_row24_col9" class="data row24 col9" >Healthcare</td>
-      <td id="T_d2447_row24_col10" class="data row24 col10" ></td>
+      <th id="T_e1764_level0_row24" class="row_heading level0 row24" >24</th>
+      <td id="T_e1764_row24_col0" class="data row24 col0" >GENF</td>
+      <td id="T_e1764_row24_col1" class="data row24 col1" >Genflow Biosciences</td>
+      <td id="T_e1764_row24_col2" class="data row24 col2" >10529</td>
+      <td id="T_e1764_row24_col3" class="data row24 col3" >1.70p</td>
+      <td id="T_e1764_row24_col4" class="data row24 col4" >£178.99</td>
+      <td id="T_e1764_row24_col5" class="data row24 col5" >£200.00</td>
+      <td id="T_e1764_row24_col6" class="data row24 col6" >£-21.01</td>
+      <td id="T_e1764_row24_col7" class="data row24 col7" >-10.51%</td>
+      <td id="T_e1764_row24_col8" class="data row24 col8" >1.90p</td>
+      <td id="T_e1764_row24_col9" class="data row24 col9" >Healthcare</td>
+      <td id="T_e1764_row24_col10" class="data row24 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row25" class="row_heading level0 row25" >25</th>
-      <td id="T_d2447_row25_col0" class="data row25 col0" >LGEN</td>
-      <td id="T_d2447_row25_col1" class="data row25 col1" >Legal & General Group</td>
-      <td id="T_d2447_row25_col2" class="data row25 col2" >1513</td>
-      <td id="T_d2447_row25_col3" class="data row25 col3" >220.80p</td>
-      <td id="T_d2447_row25_col4" class="data row25 col4" >£3,340.70</td>
-      <td id="T_d2447_row25_col5" class="data row25 col5" >£3,825.90</td>
-      <td id="T_d2447_row25_col6" class="data row25 col6" >£-485.20</td>
-      <td id="T_d2447_row25_col7" class="data row25 col7" >-12.68%</td>
-      <td id="T_d2447_row25_col8" class="data row25 col8" >252.87p</td>
-      <td id="T_d2447_row25_col9" class="data row25 col9" >Financial Services</td>
-      <td id="T_d2447_row25_col10" class="data row25 col10" >9.22</td>
+      <th id="T_e1764_level0_row25" class="row_heading level0 row25" >25</th>
+      <td id="T_e1764_row25_col0" class="data row25 col0" >LGEN</td>
+      <td id="T_e1764_row25_col1" class="data row25 col1" >Legal & General Group</td>
+      <td id="T_e1764_row25_col2" class="data row25 col2" >1513</td>
+      <td id="T_e1764_row25_col3" class="data row25 col3" >220.80p</td>
+      <td id="T_e1764_row25_col4" class="data row25 col4" >£3,340.70</td>
+      <td id="T_e1764_row25_col5" class="data row25 col5" >£3,825.90</td>
+      <td id="T_e1764_row25_col6" class="data row25 col6" >£-485.20</td>
+      <td id="T_e1764_row25_col7" class="data row25 col7" >-12.68%</td>
+      <td id="T_e1764_row25_col8" class="data row25 col8" >252.87p</td>
+      <td id="T_e1764_row25_col9" class="data row25 col9" >Financial Services</td>
+      <td id="T_e1764_row25_col10" class="data row25 col10" >8.87</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row26" class="row_heading level0 row26" >26</th>
-      <td id="T_d2447_row26_col0" class="data row26 col0" >DLG</td>
-      <td id="T_d2447_row26_col1" class="data row26 col1" >Direct Line Insurance Group</td>
-      <td id="T_d2447_row26_col2" class="data row26 col2" >259</td>
-      <td id="T_d2447_row26_col3" class="data row26 col3" >163.80p</td>
-      <td id="T_d2447_row26_col4" class="data row26 col4" >£424.24</td>
-      <td id="T_d2447_row26_col5" class="data row26 col5" >£501.25</td>
-      <td id="T_d2447_row26_col6" class="data row26 col6" >£-77.01</td>
-      <td id="T_d2447_row26_col7" class="data row26 col7" >-15.36%</td>
-      <td id="T_d2447_row26_col8" class="data row26 col8" >193.53p</td>
-      <td id="T_d2447_row26_col9" class="data row26 col9" >Financial Services</td>
-      <td id="T_d2447_row26_col10" class="data row26 col10" >2.35</td>
+      <th id="T_e1764_level0_row26" class="row_heading level0 row26" >26</th>
+      <td id="T_e1764_row26_col0" class="data row26 col0" >DLG</td>
+      <td id="T_e1764_row26_col1" class="data row26 col1" >Direct Line Insurance Group</td>
+      <td id="T_e1764_row26_col2" class="data row26 col2" >259</td>
+      <td id="T_e1764_row26_col3" class="data row26 col3" >163.80p</td>
+      <td id="T_e1764_row26_col4" class="data row26 col4" >£424.24</td>
+      <td id="T_e1764_row26_col5" class="data row26 col5" >£501.25</td>
+      <td id="T_e1764_row26_col6" class="data row26 col6" >£-77.01</td>
+      <td id="T_e1764_row26_col7" class="data row26 col7" >-15.36%</td>
+      <td id="T_e1764_row26_col8" class="data row26 col8" >193.53p</td>
+      <td id="T_e1764_row26_col9" class="data row26 col9" >Financial Services</td>
+      <td id="T_e1764_row26_col10" class="data row26 col10" >2.31</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row27" class="row_heading level0 row27" >27</th>
-      <td id="T_d2447_row27_col0" class="data row27 col0" >VOD</td>
-      <td id="T_d2447_row27_col1" class="data row27 col1" >Vodafone Group</td>
-      <td id="T_d2447_row27_col2" class="data row27 col2" >950</td>
-      <td id="T_d2447_row27_col3" class="data row27 col3" >72.24p</td>
-      <td id="T_d2447_row27_col4" class="data row27 col4" >£686.28</td>
-      <td id="T_d2447_row27_col5" class="data row27 col5" >£851.31</td>
-      <td id="T_d2447_row27_col6" class="data row27 col6" >£-165.03</td>
-      <td id="T_d2447_row27_col7" class="data row27 col7" >-19.39%</td>
-      <td id="T_d2447_row27_col8" class="data row27 col8" >89.61p</td>
-      <td id="T_d2447_row27_col9" class="data row27 col9" >Communication Services</td>
-      <td id="T_d2447_row27_col10" class="data row27 col10" >8.40</td>
+      <th id="T_e1764_level0_row27" class="row_heading level0 row27" >27</th>
+      <td id="T_e1764_row27_col0" class="data row27 col0" >VOD</td>
+      <td id="T_e1764_row27_col1" class="data row27 col1" >Vodafone Group</td>
+      <td id="T_e1764_row27_col2" class="data row27 col2" >950</td>
+      <td id="T_e1764_row27_col3" class="data row27 col3" >72.24p</td>
+      <td id="T_e1764_row27_col4" class="data row27 col4" >£686.28</td>
+      <td id="T_e1764_row27_col5" class="data row27 col5" >£851.31</td>
+      <td id="T_e1764_row27_col6" class="data row27 col6" >£-165.03</td>
+      <td id="T_e1764_row27_col7" class="data row27 col7" >-19.39%</td>
+      <td id="T_e1764_row27_col8" class="data row27 col8" >89.61p</td>
+      <td id="T_e1764_row27_col9" class="data row27 col9" >Communication Services</td>
+      <td id="T_e1764_row27_col10" class="data row27 col10" >8.19</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row28" class="row_heading level0 row28" >28</th>
-      <td id="T_d2447_row28_col0" class="data row28 col0" >JDW</td>
-      <td id="T_d2447_row28_col1" class="data row28 col1" >Wetherspoon (J D)</td>
-      <td id="T_d2447_row28_col2" class="data row28 col2" >211</td>
-      <td id="T_d2447_row28_col3" class="data row28 col3" >603.00p</td>
-      <td id="T_d2447_row28_col4" class="data row28 col4" >£1,272.33</td>
-      <td id="T_d2447_row28_col5" class="data row28 col5" >£1,589.69</td>
-      <td id="T_d2447_row28_col6" class="data row28 col6" >£-317.36</td>
-      <td id="T_d2447_row28_col7" class="data row28 col7" >-19.96%</td>
-      <td id="T_d2447_row28_col8" class="data row28 col8" >753.41p</td>
-      <td id="T_d2447_row28_col9" class="data row28 col9" >Consumer Cyclical</td>
-      <td id="T_d2447_row28_col10" class="data row28 col10" >2.04</td>
+      <th id="T_e1764_level0_row28" class="row_heading level0 row28" >28</th>
+      <td id="T_e1764_row28_col0" class="data row28 col0" >JDW</td>
+      <td id="T_e1764_row28_col1" class="data row28 col1" >Wetherspoon (J D)</td>
+      <td id="T_e1764_row28_col2" class="data row28 col2" >211</td>
+      <td id="T_e1764_row28_col3" class="data row28 col3" >603.00p</td>
+      <td id="T_e1764_row28_col4" class="data row28 col4" >£1,272.33</td>
+      <td id="T_e1764_row28_col5" class="data row28 col5" >£1,589.69</td>
+      <td id="T_e1764_row28_col6" class="data row28 col6" >£-317.36</td>
+      <td id="T_e1764_row28_col7" class="data row28 col7" >-19.96%</td>
+      <td id="T_e1764_row28_col8" class="data row28 col8" >753.41p</td>
+      <td id="T_e1764_row28_col9" class="data row28 col9" >Consumer Cyclical</td>
+      <td id="T_e1764_row28_col10" class="data row28 col10" >1.98</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row29" class="row_heading level0 row29" >29</th>
-      <td id="T_d2447_row29_col0" class="data row29 col0" >VTU</td>
-      <td id="T_d2447_row29_col1" class="data row29 col1" >Vertu Motors</td>
-      <td id="T_d2447_row29_col2" class="data row29 col2" >594</td>
-      <td id="T_d2447_row29_col3" class="data row29 col3" >67.10p</td>
-      <td id="T_d2447_row29_col4" class="data row29 col4" >£398.57</td>
-      <td id="T_d2447_row29_col5" class="data row29 col5" >£499.68</td>
-      <td id="T_d2447_row29_col6" class="data row29 col6" >£-101.11</td>
-      <td id="T_d2447_row29_col7" class="data row29 col7" >-20.24%</td>
-      <td id="T_d2447_row29_col8" class="data row29 col8" >84.12p</td>
-      <td id="T_d2447_row29_col9" class="data row29 col9" >Consumer Cyclical</td>
-      <td id="T_d2447_row29_col10" class="data row29 col10" >4.50</td>
+      <th id="T_e1764_level0_row29" class="row_heading level0 row29" >29</th>
+      <td id="T_e1764_row29_col0" class="data row29 col0" >VTU</td>
+      <td id="T_e1764_row29_col1" class="data row29 col1" >Vertu Motors</td>
+      <td id="T_e1764_row29_col2" class="data row29 col2" >594</td>
+      <td id="T_e1764_row29_col3" class="data row29 col3" >67.10p</td>
+      <td id="T_e1764_row29_col4" class="data row29 col4" >£398.57</td>
+      <td id="T_e1764_row29_col5" class="data row29 col5" >£499.68</td>
+      <td id="T_e1764_row29_col6" class="data row29 col6" >£-101.11</td>
+      <td id="T_e1764_row29_col7" class="data row29 col7" >-20.24%</td>
+      <td id="T_e1764_row29_col8" class="data row29 col8" >84.12p</td>
+      <td id="T_e1764_row29_col9" class="data row29 col9" >Consumer Cyclical</td>
+      <td id="T_e1764_row29_col10" class="data row29 col10" >4.29</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row30" class="row_heading level0 row30" >30</th>
-      <td id="T_d2447_row30_col0" class="data row30 col0" >DGE</td>
-      <td id="T_d2447_row30_col1" class="data row30 col1" >Diageo</td>
-      <td id="T_d2447_row30_col2" class="data row30 col2" >33</td>
-      <td id="T_d2447_row30_col3" class="data row30 col3" >2,385.00p</td>
-      <td id="T_d2447_row30_col4" class="data row30 col4" >£787.05</td>
-      <td id="T_d2447_row30_col5" class="data row30 col5" >£992.39</td>
-      <td id="T_d2447_row30_col6" class="data row30 col6" >£-205.34</td>
-      <td id="T_d2447_row30_col7" class="data row30 col7" >-20.69%</td>
-      <td id="T_d2447_row30_col8" class="data row30 col8" >3,007.24p</td>
-      <td id="T_d2447_row30_col9" class="data row30 col9" >Consumer Defensive</td>
-      <td id="T_d2447_row30_col10" class="data row30 col10" >3.39</td>
+      <th id="T_e1764_level0_row30" class="row_heading level0 row30" >30</th>
+      <td id="T_e1764_row30_col0" class="data row30 col0" >DGE</td>
+      <td id="T_e1764_row30_col1" class="data row30 col1" >Diageo</td>
+      <td id="T_e1764_row30_col2" class="data row30 col2" >33</td>
+      <td id="T_e1764_row30_col3" class="data row30 col3" >2,385.00p</td>
+      <td id="T_e1764_row30_col4" class="data row30 col4" >£787.05</td>
+      <td id="T_e1764_row30_col5" class="data row30 col5" >£992.39</td>
+      <td id="T_e1764_row30_col6" class="data row30 col6" >£-205.34</td>
+      <td id="T_e1764_row30_col7" class="data row30 col7" >-20.69%</td>
+      <td id="T_e1764_row30_col8" class="data row30 col8" >3,007.24p</td>
+      <td id="T_e1764_row30_col9" class="data row30 col9" >Consumer Defensive</td>
+      <td id="T_e1764_row30_col10" class="data row30 col10" >3.36</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row31" class="row_heading level0 row31" >31</th>
-      <td id="T_d2447_row31_col0" class="data row31 col0" >BP.</td>
-      <td id="T_d2447_row31_col1" class="data row31 col1" >BP</td>
-      <td id="T_d2447_row31_col2" class="data row31 col2" >436</td>
-      <td id="T_d2447_row31_col3" class="data row31 col3" >382.95p</td>
-      <td id="T_d2447_row31_col4" class="data row31 col4" >£1,669.66</td>
-      <td id="T_d2447_row31_col5" class="data row31 col5" >£2,109.49</td>
-      <td id="T_d2447_row31_col6" class="data row31 col6" >£-439.83</td>
-      <td id="T_d2447_row31_col7" class="data row31 col7" >-20.85%</td>
-      <td id="T_d2447_row31_col8" class="data row31 col8" >483.83p</td>
-      <td id="T_d2447_row31_col9" class="data row31 col9" >Energy</td>
-      <td id="T_d2447_row31_col10" class="data row31 col10" >5.64</td>
+      <th id="T_e1764_level0_row31" class="row_heading level0 row31" >31</th>
+      <td id="T_e1764_row31_col0" class="data row31 col0" >BP.</td>
+      <td id="T_e1764_row31_col1" class="data row31 col1" >BP</td>
+      <td id="T_e1764_row31_col2" class="data row31 col2" >436</td>
+      <td id="T_e1764_row31_col3" class="data row31 col3" >382.95p</td>
+      <td id="T_e1764_row31_col4" class="data row31 col4" >£1,669.66</td>
+      <td id="T_e1764_row31_col5" class="data row31 col5" >£2,109.49</td>
+      <td id="T_e1764_row31_col6" class="data row31 col6" >£-439.83</td>
+      <td id="T_e1764_row31_col7" class="data row31 col7" >-20.85%</td>
+      <td id="T_e1764_row31_col8" class="data row31 col8" >483.83p</td>
+      <td id="T_e1764_row31_col9" class="data row31 col9" >Energy</td>
+      <td id="T_e1764_row31_col10" class="data row31 col10" >5.61</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row32" class="row_heading level0 row32" >32</th>
-      <td id="T_d2447_row32_col0" class="data row32 col0" >WG.</td>
-      <td id="T_d2447_row32_col1" class="data row32 col1" >John Wood Group</td>
-      <td id="T_d2447_row32_col2" class="data row32 col2" >1281</td>
-      <td id="T_d2447_row32_col3" class="data row32 col3" >123.90p</td>
-      <td id="T_d2447_row32_col4" class="data row32 col4" >£1,587.16</td>
-      <td id="T_d2447_row32_col5" class="data row32 col5" >£2,066.66</td>
-      <td id="T_d2447_row32_col6" class="data row32 col6" >£-479.50</td>
-      <td id="T_d2447_row32_col7" class="data row32 col7" >-23.20%</td>
-      <td id="T_d2447_row32_col8" class="data row32 col8" >161.33p</td>
-      <td id="T_d2447_row32_col9" class="data row32 col9" >Energy</td>
-      <td id="T_d2447_row32_col10" class="data row32 col10" ></td>
+      <th id="T_e1764_level0_row32" class="row_heading level0 row32" >32</th>
+      <td id="T_e1764_row32_col0" class="data row32 col0" >WG.</td>
+      <td id="T_e1764_row32_col1" class="data row32 col1" >John Wood Group</td>
+      <td id="T_e1764_row32_col2" class="data row32 col2" >1281</td>
+      <td id="T_e1764_row32_col3" class="data row32 col3" >123.90p</td>
+      <td id="T_e1764_row32_col4" class="data row32 col4" >£1,587.16</td>
+      <td id="T_e1764_row32_col5" class="data row32 col5" >£2,066.66</td>
+      <td id="T_e1764_row32_col6" class="data row32 col6" >£-479.50</td>
+      <td id="T_e1764_row32_col7" class="data row32 col7" >-23.20%</td>
+      <td id="T_e1764_row32_col8" class="data row32 col8" >161.33p</td>
+      <td id="T_e1764_row32_col9" class="data row32 col9" >Energy</td>
+      <td id="T_e1764_row32_col10" class="data row32 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row33" class="row_heading level0 row33" >33</th>
-      <td id="T_d2447_row33_col0" class="data row33 col0" >ABDN</td>
-      <td id="T_d2447_row33_col1" class="data row33 col1" >abrdn</td>
-      <td id="T_d2447_row33_col2" class="data row33 col2" >460</td>
-      <td id="T_d2447_row33_col3" class="data row33 col3" >134.35p</td>
-      <td id="T_d2447_row33_col4" class="data row33 col4" >£618.01</td>
-      <td id="T_d2447_row33_col5" class="data row33 col5" >£842.36</td>
-      <td id="T_d2447_row33_col6" class="data row33 col6" >£-224.35</td>
-      <td id="T_d2447_row33_col7" class="data row33 col7" >-26.63%</td>
-      <td id="T_d2447_row33_col8" class="data row33 col8" >183.12p</td>
-      <td id="T_d2447_row33_col9" class="data row33 col9" >Financial Services</td>
-      <td id="T_d2447_row33_col10" class="data row33 col10" >11.08</td>
+      <th id="T_e1764_level0_row33" class="row_heading level0 row33" >33</th>
+      <td id="T_e1764_row33_col0" class="data row33 col0" >ABDN</td>
+      <td id="T_e1764_row33_col1" class="data row33 col1" >abrdn</td>
+      <td id="T_e1764_row33_col2" class="data row33 col2" >460</td>
+      <td id="T_e1764_row33_col3" class="data row33 col3" >134.35p</td>
+      <td id="T_e1764_row33_col4" class="data row33 col4" >£618.01</td>
+      <td id="T_e1764_row33_col5" class="data row33 col5" >£842.36</td>
+      <td id="T_e1764_row33_col6" class="data row33 col6" >£-224.35</td>
+      <td id="T_e1764_row33_col7" class="data row33 col7" >-26.63%</td>
+      <td id="T_e1764_row33_col8" class="data row33 col8" >183.12p</td>
+      <td id="T_e1764_row33_col9" class="data row33 col9" >Financial Services</td>
+      <td id="T_e1764_row33_col10" class="data row33 col10" >10.67</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row34" class="row_heading level0 row34" >34</th>
-      <td id="T_d2447_row34_col0" class="data row34 col0" >AURA</td>
-      <td id="T_d2447_row34_col1" class="data row34 col1" >Aura Energy Ltd</td>
-      <td id="T_d2447_row34_col2" class="data row34 col2" >1922</td>
-      <td id="T_d2447_row34_col3" class="data row34 col3" >7.50p</td>
-      <td id="T_d2447_row34_col4" class="data row34 col4" >£144.15</td>
-      <td id="T_d2447_row34_col5" class="data row34 col5" >£199.92</td>
-      <td id="T_d2447_row34_col6" class="data row34 col6" >£-55.77</td>
-      <td id="T_d2447_row34_col7" class="data row34 col7" >-27.90%</td>
-      <td id="T_d2447_row34_col8" class="data row34 col8" >10.40p</td>
-      <td id="T_d2447_row34_col9" class="data row34 col9" >Energy</td>
-      <td id="T_d2447_row34_col10" class="data row34 col10" ></td>
+      <th id="T_e1764_level0_row34" class="row_heading level0 row34" >34</th>
+      <td id="T_e1764_row34_col0" class="data row34 col0" >AURA</td>
+      <td id="T_e1764_row34_col1" class="data row34 col1" >Aura Energy Ltd</td>
+      <td id="T_e1764_row34_col2" class="data row34 col2" >1922</td>
+      <td id="T_e1764_row34_col3" class="data row34 col3" >7.50p</td>
+      <td id="T_e1764_row34_col4" class="data row34 col4" >£144.15</td>
+      <td id="T_e1764_row34_col5" class="data row34 col5" >£199.92</td>
+      <td id="T_e1764_row34_col6" class="data row34 col6" >£-55.77</td>
+      <td id="T_e1764_row34_col7" class="data row34 col7" >-27.90%</td>
+      <td id="T_e1764_row34_col8" class="data row34 col8" >10.40p</td>
+      <td id="T_e1764_row34_col9" class="data row34 col9" >Energy</td>
+      <td id="T_e1764_row34_col10" class="data row34 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row35" class="row_heading level0 row35" >35</th>
-      <td id="T_d2447_row35_col0" class="data row35 col0" >EDEN</td>
-      <td id="T_d2447_row35_col1" class="data row35 col1" >Eden Research</td>
-      <td id="T_d2447_row35_col2" class="data row35 col2" >15449</td>
-      <td id="T_d2447_row35_col3" class="data row35 col3" >3.70p</td>
-      <td id="T_d2447_row35_col4" class="data row35 col4" >£571.61</td>
-      <td id="T_d2447_row35_col5" class="data row35 col5" >£799.96</td>
-      <td id="T_d2447_row35_col6" class="data row35 col6" >£-228.35</td>
-      <td id="T_d2447_row35_col7" class="data row35 col7" >-28.55%</td>
-      <td id="T_d2447_row35_col8" class="data row35 col8" >5.18p</td>
-      <td id="T_d2447_row35_col9" class="data row35 col9" >Basic Materials</td>
-      <td id="T_d2447_row35_col10" class="data row35 col10" ></td>
+      <th id="T_e1764_level0_row35" class="row_heading level0 row35" >35</th>
+      <td id="T_e1764_row35_col0" class="data row35 col0" >EDEN</td>
+      <td id="T_e1764_row35_col1" class="data row35 col1" >Eden Research</td>
+      <td id="T_e1764_row35_col2" class="data row35 col2" >15449</td>
+      <td id="T_e1764_row35_col3" class="data row35 col3" >3.70p</td>
+      <td id="T_e1764_row35_col4" class="data row35 col4" >£571.61</td>
+      <td id="T_e1764_row35_col5" class="data row35 col5" >£799.96</td>
+      <td id="T_e1764_row35_col6" class="data row35 col6" >£-228.35</td>
+      <td id="T_e1764_row35_col7" class="data row35 col7" >-28.55%</td>
+      <td id="T_e1764_row35_col8" class="data row35 col8" >5.18p</td>
+      <td id="T_e1764_row35_col9" class="data row35 col9" >Basic Materials</td>
+      <td id="T_e1764_row35_col10" class="data row35 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row36" class="row_heading level0 row36" >36</th>
-      <td id="T_d2447_row36_col0" class="data row36 col0" >CUSN</td>
-      <td id="T_d2447_row36_col1" class="data row36 col1" >Cornish Metals Inc</td>
-      <td id="T_d2447_row36_col2" class="data row36 col2" >4648</td>
-      <td id="T_d2447_row36_col3" class="data row36 col3" >9.00p</td>
-      <td id="T_d2447_row36_col4" class="data row36 col4" >£418.32</td>
-      <td id="T_d2447_row36_col5" class="data row36 col5" >£599.91</td>
-      <td id="T_d2447_row36_col6" class="data row36 col6" >£-181.59</td>
-      <td id="T_d2447_row36_col7" class="data row36 col7" >-30.27%</td>
-      <td id="T_d2447_row36_col8" class="data row36 col8" >12.91p</td>
-      <td id="T_d2447_row36_col9" class="data row36 col9" >Basic Materials</td>
-      <td id="T_d2447_row36_col10" class="data row36 col10" ></td>
+      <th id="T_e1764_level0_row36" class="row_heading level0 row36" >36</th>
+      <td id="T_e1764_row36_col0" class="data row36 col0" >CUSN</td>
+      <td id="T_e1764_row36_col1" class="data row36 col1" >Cornish Metals Inc</td>
+      <td id="T_e1764_row36_col2" class="data row36 col2" >4648</td>
+      <td id="T_e1764_row36_col3" class="data row36 col3" >9.00p</td>
+      <td id="T_e1764_row36_col4" class="data row36 col4" >£418.32</td>
+      <td id="T_e1764_row36_col5" class="data row36 col5" >£599.91</td>
+      <td id="T_e1764_row36_col6" class="data row36 col6" >£-181.59</td>
+      <td id="T_e1764_row36_col7" class="data row36 col7" >-30.27%</td>
+      <td id="T_e1764_row36_col8" class="data row36 col8" >12.91p</td>
+      <td id="T_e1764_row36_col9" class="data row36 col9" >Basic Materials</td>
+      <td id="T_e1764_row36_col10" class="data row36 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row37" class="row_heading level0 row37" >37</th>
-      <td id="T_d2447_row37_col0" class="data row37 col0" >VTY</td>
-      <td id="T_d2447_row37_col1" class="data row37 col1" >Vistry Group</td>
-      <td id="T_d2447_row37_col2" class="data row37 col2" >45</td>
-      <td id="T_d2447_row37_col3" class="data row37 col3" >892.00p</td>
-      <td id="T_d2447_row37_col4" class="data row37 col4" >£401.40</td>
-      <td id="T_d2447_row37_col5" class="data row37 col5" >£593.72</td>
-      <td id="T_d2447_row37_col6" class="data row37 col6" >£-192.32</td>
-      <td id="T_d2447_row37_col7" class="data row37 col7" >-32.39%</td>
-      <td id="T_d2447_row37_col8" class="data row37 col8" >1,319.38p</td>
-      <td id="T_d2447_row37_col9" class="data row37 col9" >Consumer Cyclical</td>
-      <td id="T_d2447_row37_col10" class="data row37 col10" ></td>
+      <th id="T_e1764_level0_row37" class="row_heading level0 row37" >37</th>
+      <td id="T_e1764_row37_col0" class="data row37 col0" >VTY</td>
+      <td id="T_e1764_row37_col1" class="data row37 col1" >Vistry Group</td>
+      <td id="T_e1764_row37_col2" class="data row37 col2" >45</td>
+      <td id="T_e1764_row37_col3" class="data row37 col3" >892.00p</td>
+      <td id="T_e1764_row37_col4" class="data row37 col4" >£401.40</td>
+      <td id="T_e1764_row37_col5" class="data row37 col5" >£593.72</td>
+      <td id="T_e1764_row37_col6" class="data row37 col6" >£-192.32</td>
+      <td id="T_e1764_row37_col7" class="data row37 col7" >-32.39%</td>
+      <td id="T_e1764_row37_col8" class="data row37 col8" >1,319.38p</td>
+      <td id="T_e1764_row37_col9" class="data row37 col9" >Consumer Cyclical</td>
+      <td id="T_e1764_row37_col10" class="data row37 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row38" class="row_heading level0 row38" >38</th>
-      <td id="T_d2447_row38_col0" class="data row38 col0" >SHOE</td>
-      <td id="T_d2447_row38_col1" class="data row38 col1" >Shoe Zone</td>
-      <td id="T_d2447_row38_col2" class="data row38 col2" >688</td>
-      <td id="T_d2447_row38_col3" class="data row38 col3" >150.00p</td>
-      <td id="T_d2447_row38_col4" class="data row38 col4" >£1,032.00</td>
-      <td id="T_d2447_row38_col5" class="data row38 col5" >£1,600.66</td>
-      <td id="T_d2447_row38_col6" class="data row38 col6" >£-568.66</td>
-      <td id="T_d2447_row38_col7" class="data row38 col7" >-35.53%</td>
-      <td id="T_d2447_row38_col8" class="data row38 col8" >232.65p</td>
-      <td id="T_d2447_row38_col9" class="data row38 col9" >Consumer Cyclical</td>
-      <td id="T_d2447_row38_col10" class="data row38 col10" >13.24</td>
+      <th id="T_e1764_level0_row38" class="row_heading level0 row38" >38</th>
+      <td id="T_e1764_row38_col0" class="data row38 col0" >SHOE</td>
+      <td id="T_e1764_row38_col1" class="data row38 col1" >Shoe Zone</td>
+      <td id="T_e1764_row38_col2" class="data row38 col2" >688</td>
+      <td id="T_e1764_row38_col3" class="data row38 col3" >150.00p</td>
+      <td id="T_e1764_row38_col4" class="data row38 col4" >£1,032.00</td>
+      <td id="T_e1764_row38_col5" class="data row38 col5" >£1,600.66</td>
+      <td id="T_e1764_row38_col6" class="data row38 col6" >£-568.66</td>
+      <td id="T_e1764_row38_col7" class="data row38 col7" >-35.53%</td>
+      <td id="T_e1764_row38_col8" class="data row38 col8" >232.65p</td>
+      <td id="T_e1764_row38_col9" class="data row38 col9" >Consumer Cyclical</td>
+      <td id="T_e1764_row38_col10" class="data row38 col10" >12.93</td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row39" class="row_heading level0 row39" >39</th>
-      <td id="T_d2447_row39_col0" class="data row39 col0" >CREO</td>
-      <td id="T_d2447_row39_col1" class="data row39 col1" >Creo Medical Group</td>
-      <td id="T_d2447_row39_col2" class="data row39 col2" >1227</td>
-      <td id="T_d2447_row39_col3" class="data row39 col3" >18.50p</td>
-      <td id="T_d2447_row39_col4" class="data row39 col4" >£227.00</td>
-      <td id="T_d2447_row39_col5" class="data row39 col5" >£399.86</td>
-      <td id="T_d2447_row39_col6" class="data row39 col6" >£-172.86</td>
-      <td id="T_d2447_row39_col7" class="data row39 col7" >-43.23%</td>
-      <td id="T_d2447_row39_col8" class="data row39 col8" >32.59p</td>
-      <td id="T_d2447_row39_col9" class="data row39 col9" >Healthcare</td>
-      <td id="T_d2447_row39_col10" class="data row39 col10" ></td>
+      <th id="T_e1764_level0_row39" class="row_heading level0 row39" >39</th>
+      <td id="T_e1764_row39_col0" class="data row39 col0" >CREO</td>
+      <td id="T_e1764_row39_col1" class="data row39 col1" >Creo Medical Group</td>
+      <td id="T_e1764_row39_col2" class="data row39 col2" >1227</td>
+      <td id="T_e1764_row39_col3" class="data row39 col3" >18.50p</td>
+      <td id="T_e1764_row39_col4" class="data row39 col4" >£227.00</td>
+      <td id="T_e1764_row39_col5" class="data row39 col5" >£399.86</td>
+      <td id="T_e1764_row39_col6" class="data row39 col6" >£-172.86</td>
+      <td id="T_e1764_row39_col7" class="data row39 col7" >-43.23%</td>
+      <td id="T_e1764_row39_col8" class="data row39 col8" >32.59p</td>
+      <td id="T_e1764_row39_col9" class="data row39 col9" >Healthcare</td>
+      <td id="T_e1764_row39_col10" class="data row39 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row40" class="row_heading level0 row40" >40</th>
-      <td id="T_d2447_row40_col0" class="data row40 col0" >IKA</td>
-      <td id="T_d2447_row40_col1" class="data row40 col1" >Ilika</td>
-      <td id="T_d2447_row40_col2" class="data row40 col2" >3955</td>
-      <td id="T_d2447_row40_col3" class="data row40 col3" >18.00p</td>
-      <td id="T_d2447_row40_col4" class="data row40 col4" >£711.90</td>
-      <td id="T_d2447_row40_col5" class="data row40 col5" >£1,749.56</td>
-      <td id="T_d2447_row40_col6" class="data row40 col6" >£-1,037.66</td>
-      <td id="T_d2447_row40_col7" class="data row40 col7" >-59.31%</td>
-      <td id="T_d2447_row40_col8" class="data row40 col8" >44.24p</td>
-      <td id="T_d2447_row40_col9" class="data row40 col9" >Industrials</td>
-      <td id="T_d2447_row40_col10" class="data row40 col10" ></td>
+      <th id="T_e1764_level0_row40" class="row_heading level0 row40" >40</th>
+      <td id="T_e1764_row40_col0" class="data row40 col0" >IKA</td>
+      <td id="T_e1764_row40_col1" class="data row40 col1" >Ilika</td>
+      <td id="T_e1764_row40_col2" class="data row40 col2" >3955</td>
+      <td id="T_e1764_row40_col3" class="data row40 col3" >18.00p</td>
+      <td id="T_e1764_row40_col4" class="data row40 col4" >£711.90</td>
+      <td id="T_e1764_row40_col5" class="data row40 col5" >£1,749.56</td>
+      <td id="T_e1764_row40_col6" class="data row40 col6" >£-1,037.66</td>
+      <td id="T_e1764_row40_col7" class="data row40 col7" >-59.31%</td>
+      <td id="T_e1764_row40_col8" class="data row40 col8" >44.24p</td>
+      <td id="T_e1764_row40_col9" class="data row40 col9" >Industrials</td>
+      <td id="T_e1764_row40_col10" class="data row40 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row41" class="row_heading level0 row41" >41</th>
-      <td id="T_d2447_row41_col0" class="data row41 col0" >ITM</td>
-      <td id="T_d2447_row41_col1" class="data row41 col1" >ITM Power</td>
-      <td id="T_d2447_row41_col2" class="data row41 col2" >429</td>
-      <td id="T_d2447_row41_col3" class="data row41 col3" >42.52p</td>
-      <td id="T_d2447_row41_col4" class="data row41 col4" >£182.41</td>
-      <td id="T_d2447_row41_col5" class="data row41 col5" >£499.76</td>
-      <td id="T_d2447_row41_col6" class="data row41 col6" >£-317.35</td>
-      <td id="T_d2447_row41_col7" class="data row41 col7" >-63.50%</td>
-      <td id="T_d2447_row41_col8" class="data row41 col8" >116.49p</td>
-      <td id="T_d2447_row41_col9" class="data row41 col9" >Industrials</td>
-      <td id="T_d2447_row41_col10" class="data row41 col10" ></td>
+      <th id="T_e1764_level0_row41" class="row_heading level0 row41" >41</th>
+      <td id="T_e1764_row41_col0" class="data row41 col0" >ITM</td>
+      <td id="T_e1764_row41_col1" class="data row41 col1" >ITM Power</td>
+      <td id="T_e1764_row41_col2" class="data row41 col2" >429</td>
+      <td id="T_e1764_row41_col3" class="data row41 col3" >42.52p</td>
+      <td id="T_e1764_row41_col4" class="data row41 col4" >£182.41</td>
+      <td id="T_e1764_row41_col5" class="data row41 col5" >£499.76</td>
+      <td id="T_e1764_row41_col6" class="data row41 col6" >£-317.35</td>
+      <td id="T_e1764_row41_col7" class="data row41 col7" >-63.50%</td>
+      <td id="T_e1764_row41_col8" class="data row41 col8" >116.49p</td>
+      <td id="T_e1764_row41_col9" class="data row41 col9" >Industrials</td>
+      <td id="T_e1764_row41_col10" class="data row41 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row42" class="row_heading level0 row42" >42</th>
-      <td id="T_d2447_row42_col0" class="data row42 col0" >PFC</td>
-      <td id="T_d2447_row42_col1" class="data row42 col1" >Petrofac Ltd</td>
-      <td id="T_d2447_row42_col2" class="data row42 col2" >605</td>
-      <td id="T_d2447_row42_col3" class="data row42 col3" >12.40p</td>
-      <td id="T_d2447_row42_col4" class="data row42 col4" >£75.02</td>
-      <td id="T_d2447_row42_col5" class="data row42 col5" >£502.57</td>
-      <td id="T_d2447_row42_col6" class="data row42 col6" >£-427.55</td>
-      <td id="T_d2447_row42_col7" class="data row42 col7" >-85.07%</td>
-      <td id="T_d2447_row42_col8" class="data row42 col8" >83.07p</td>
-      <td id="T_d2447_row42_col9" class="data row42 col9" >Energy</td>
-      <td id="T_d2447_row42_col10" class="data row42 col10" ></td>
+      <th id="T_e1764_level0_row42" class="row_heading level0 row42" >42</th>
+      <td id="T_e1764_row42_col0" class="data row42 col0" >PFC</td>
+      <td id="T_e1764_row42_col1" class="data row42 col1" >Petrofac Ltd</td>
+      <td id="T_e1764_row42_col2" class="data row42 col2" >605</td>
+      <td id="T_e1764_row42_col3" class="data row42 col3" >12.40p</td>
+      <td id="T_e1764_row42_col4" class="data row42 col4" >£75.02</td>
+      <td id="T_e1764_row42_col5" class="data row42 col5" >£502.57</td>
+      <td id="T_e1764_row42_col6" class="data row42 col6" >£-427.55</td>
+      <td id="T_e1764_row42_col7" class="data row42 col7" >-85.07%</td>
+      <td id="T_e1764_row42_col8" class="data row42 col8" >83.07p</td>
+      <td id="T_e1764_row42_col9" class="data row42 col9" >Energy</td>
+      <td id="T_e1764_row42_col10" class="data row42 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row43" class="row_heading level0 row43" >43</th>
-      <td id="T_d2447_row43_col0" class="data row43 col0" >WBI</td>
-      <td id="T_d2447_row43_col1" class="data row43 col1" >Woodbois Ltd</td>
-      <td id="T_d2447_row43_col2" class="data row43 col2" >35912</td>
-      <td id="T_d2447_row43_col3" class="data row43 col3" >0.23p</td>
-      <td id="T_d2447_row43_col4" class="data row43 col4" >£82.60</td>
-      <td id="T_d2447_row43_col5" class="data row43 col5" >£1,099.99</td>
-      <td id="T_d2447_row43_col6" class="data row43 col6" >£-1,017.39</td>
-      <td id="T_d2447_row43_col7" class="data row43 col7" >-92.49%</td>
-      <td id="T_d2447_row43_col8" class="data row43 col8" >3.06p</td>
-      <td id="T_d2447_row43_col9" class="data row43 col9" >Basic Materials</td>
-      <td id="T_d2447_row43_col10" class="data row43 col10" ></td>
+      <th id="T_e1764_level0_row43" class="row_heading level0 row43" >43</th>
+      <td id="T_e1764_row43_col0" class="data row43 col0" >WBI</td>
+      <td id="T_e1764_row43_col1" class="data row43 col1" >Woodbois Ltd</td>
+      <td id="T_e1764_row43_col2" class="data row43 col2" >35912</td>
+      <td id="T_e1764_row43_col3" class="data row43 col3" >0.23p</td>
+      <td id="T_e1764_row43_col4" class="data row43 col4" >£82.60</td>
+      <td id="T_e1764_row43_col5" class="data row43 col5" >£1,099.99</td>
+      <td id="T_e1764_row43_col6" class="data row43 col6" >£-1,017.39</td>
+      <td id="T_e1764_row43_col7" class="data row43 col7" >-92.49%</td>
+      <td id="T_e1764_row43_col8" class="data row43 col8" >3.06p</td>
+      <td id="T_e1764_row43_col9" class="data row43 col9" >Basic Materials</td>
+      <td id="T_e1764_row43_col10" class="data row43 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row44" class="row_heading level0 row44" >44</th>
-      <td id="T_d2447_row44_col0" class="data row44 col0" >POLX</td>
-      <td id="T_d2447_row44_col1" class="data row44 col1" >Polarean Imaging  Ordinary Shares</td>
-      <td id="T_d2447_row44_col2" class="data row44 col2" >1565</td>
-      <td id="T_d2447_row44_col3" class="data row44 col3" >1.45p</td>
-      <td id="T_d2447_row44_col4" class="data row44 col4" >£22.69</td>
-      <td id="T_d2447_row44_col5" class="data row44 col5" >£503.44</td>
-      <td id="T_d2447_row44_col6" class="data row44 col6" >£-480.75</td>
-      <td id="T_d2447_row44_col7" class="data row44 col7" >-95.49%</td>
-      <td id="T_d2447_row44_col8" class="data row44 col8" >32.17p</td>
-      <td id="T_d2447_row44_col9" class="data row44 col9" >Healthcare</td>
-      <td id="T_d2447_row44_col10" class="data row44 col10" ></td>
+      <th id="T_e1764_level0_row44" class="row_heading level0 row44" >44</th>
+      <td id="T_e1764_row44_col0" class="data row44 col0" >POLX</td>
+      <td id="T_e1764_row44_col1" class="data row44 col1" >Polarean Imaging  Ordinary Shares</td>
+      <td id="T_e1764_row44_col2" class="data row44 col2" >1565</td>
+      <td id="T_e1764_row44_col3" class="data row44 col3" >1.45p</td>
+      <td id="T_e1764_row44_col4" class="data row44 col4" >£22.69</td>
+      <td id="T_e1764_row44_col5" class="data row44 col5" >£503.44</td>
+      <td id="T_e1764_row44_col6" class="data row44 col6" >£-480.75</td>
+      <td id="T_e1764_row44_col7" class="data row44 col7" >-95.49%</td>
+      <td id="T_e1764_row44_col8" class="data row44 col8" >32.17p</td>
+      <td id="T_e1764_row44_col9" class="data row44 col9" >Healthcare</td>
+      <td id="T_e1764_row44_col10" class="data row44 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row45" class="row_heading level0 row45" >45</th>
-      <td id="T_d2447_row45_col0" class="data row45 col0" >RCGH</td>
-      <td id="T_d2447_row45_col1" class="data row45 col1" >RC365 Holding</td>
-      <td id="T_d2447_row45_col2" class="data row45 col2" >1283</td>
-      <td id="T_d2447_row45_col3" class="data row45 col3" >1.30p</td>
-      <td id="T_d2447_row45_col4" class="data row45 col4" >£16.68</td>
-      <td id="T_d2447_row45_col5" class="data row45 col5" >£999.30</td>
-      <td id="T_d2447_row45_col6" class="data row45 col6" >£-982.62</td>
-      <td id="T_d2447_row45_col7" class="data row45 col7" >-98.33%</td>
-      <td id="T_d2447_row45_col8" class="data row45 col8" >77.89p</td>
-      <td id="T_d2447_row45_col9" class="data row45 col9" >Technology</td>
-      <td id="T_d2447_row45_col10" class="data row45 col10" ></td>
+      <th id="T_e1764_level0_row45" class="row_heading level0 row45" >45</th>
+      <td id="T_e1764_row45_col0" class="data row45 col0" >RCGH</td>
+      <td id="T_e1764_row45_col1" class="data row45 col1" >RC365 Holding</td>
+      <td id="T_e1764_row45_col2" class="data row45 col2" >1283</td>
+      <td id="T_e1764_row45_col3" class="data row45 col3" >1.30p</td>
+      <td id="T_e1764_row45_col4" class="data row45 col4" >£16.68</td>
+      <td id="T_e1764_row45_col5" class="data row45 col5" >£999.30</td>
+      <td id="T_e1764_row45_col6" class="data row45 col6" >£-982.62</td>
+      <td id="T_e1764_row45_col7" class="data row45 col7" >-98.33%</td>
+      <td id="T_e1764_row45_col8" class="data row45 col8" >77.89p</td>
+      <td id="T_e1764_row45_col9" class="data row45 col9" >Technology</td>
+      <td id="T_e1764_row45_col10" class="data row45 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row46" class="row_heading level0 row46" >46</th>
-      <td id="T_d2447_row46_col0" class="data row46 col0" >CDL</td>
-      <td id="T_d2447_row46_col1" class="data row46 col1" >Cloudbreak Discovery</td>
-      <td id="T_d2447_row46_col2" class="data row46 col2" >8607</td>
-      <td id="T_d2447_row46_col3" class="data row46 col3" >0.07p</td>
-      <td id="T_d2447_row46_col4" class="data row46 col4" >£6.02</td>
-      <td id="T_d2447_row46_col5" class="data row46 col5" >£596.20</td>
-      <td id="T_d2447_row46_col6" class="data row46 col6" >£-590.18</td>
-      <td id="T_d2447_row46_col7" class="data row46 col7" >-98.99%</td>
-      <td id="T_d2447_row46_col8" class="data row46 col8" >6.93p</td>
-      <td id="T_d2447_row46_col9" class="data row46 col9" >Basic Materials</td>
-      <td id="T_d2447_row46_col10" class="data row46 col10" ></td>
+      <th id="T_e1764_level0_row46" class="row_heading level0 row46" >46</th>
+      <td id="T_e1764_row46_col0" class="data row46 col0" >CDL</td>
+      <td id="T_e1764_row46_col1" class="data row46 col1" >Cloudbreak Discovery</td>
+      <td id="T_e1764_row46_col2" class="data row46 col2" >8607</td>
+      <td id="T_e1764_row46_col3" class="data row46 col3" >0.07p</td>
+      <td id="T_e1764_row46_col4" class="data row46 col4" >£6.02</td>
+      <td id="T_e1764_row46_col5" class="data row46 col5" >£596.20</td>
+      <td id="T_e1764_row46_col6" class="data row46 col6" >£-590.18</td>
+      <td id="T_e1764_row46_col7" class="data row46 col7" >-98.99%</td>
+      <td id="T_e1764_row46_col8" class="data row46 col8" >6.93p</td>
+      <td id="T_e1764_row46_col9" class="data row46 col9" >Basic Materials</td>
+      <td id="T_e1764_row46_col10" class="data row46 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row47" class="row_heading level0 row47" >47</th>
-      <td id="T_d2447_row47_col0" class="data row47 col0" ></td>
-      <td id="T_d2447_row47_col1" class="data row47 col1" >CONSOLIDATED GWTH ORD NPV</td>
-      <td id="T_d2447_row47_col2" class="data row47 col2" >67933</td>
-      <td id="T_d2447_row47_col3" class="data row47 col3" >£0.00</td>
-      <td id="T_d2447_row47_col4" class="data row47 col4" >£0.00</td>
-      <td id="T_d2447_row47_col5" class="data row47 col5" >£0.01</td>
-      <td id="T_d2447_row47_col6" class="data row47 col6" >£-0.01</td>
-      <td id="T_d2447_row47_col7" class="data row47 col7" >-100.00%</td>
-      <td id="T_d2447_row47_col8" class="data row47 col8" >£0.00</td>
-      <td id="T_d2447_row47_col9" class="data row47 col9" ></td>
-      <td id="T_d2447_row47_col10" class="data row47 col10" ></td>
+      <th id="T_e1764_level0_row47" class="row_heading level0 row47" >47</th>
+      <td id="T_e1764_row47_col0" class="data row47 col0" ></td>
+      <td id="T_e1764_row47_col1" class="data row47 col1" >CONSOLIDATED GWTH ORD NPV</td>
+      <td id="T_e1764_row47_col2" class="data row47 col2" >67933</td>
+      <td id="T_e1764_row47_col3" class="data row47 col3" >£0.00</td>
+      <td id="T_e1764_row47_col4" class="data row47 col4" >£0.00</td>
+      <td id="T_e1764_row47_col5" class="data row47 col5" >£0.01</td>
+      <td id="T_e1764_row47_col6" class="data row47 col6" >£-0.01</td>
+      <td id="T_e1764_row47_col7" class="data row47 col7" >-100.00%</td>
+      <td id="T_e1764_row47_col8" class="data row47 col8" >£0.00</td>
+      <td id="T_e1764_row47_col9" class="data row47 col9" ></td>
+      <td id="T_e1764_row47_col10" class="data row47 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row48" class="row_heading level0 row48" >48</th>
-      <td id="T_d2447_row48_col0" class="data row48 col0" ></td>
-      <td id="T_d2447_row48_col1" class="data row48 col1" >INTERSERVE ORD GBP0.001</td>
-      <td id="T_d2447_row48_col2" class="data row48 col2" >956</td>
-      <td id="T_d2447_row48_col3" class="data row48 col3" >£0.00</td>
-      <td id="T_d2447_row48_col4" class="data row48 col4" >£0.00</td>
-      <td id="T_d2447_row48_col5" class="data row48 col5" >£0.01</td>
-      <td id="T_d2447_row48_col6" class="data row48 col6" >£-0.01</td>
-      <td id="T_d2447_row48_col7" class="data row48 col7" >-100.00%</td>
-      <td id="T_d2447_row48_col8" class="data row48 col8" >£0.00</td>
-      <td id="T_d2447_row48_col9" class="data row48 col9" ></td>
-      <td id="T_d2447_row48_col10" class="data row48 col10" ></td>
+      <th id="T_e1764_level0_row48" class="row_heading level0 row48" >48</th>
+      <td id="T_e1764_row48_col0" class="data row48 col0" ></td>
+      <td id="T_e1764_row48_col1" class="data row48 col1" >INTERSERVE ORD GBP0.001</td>
+      <td id="T_e1764_row48_col2" class="data row48 col2" >956</td>
+      <td id="T_e1764_row48_col3" class="data row48 col3" >£0.00</td>
+      <td id="T_e1764_row48_col4" class="data row48 col4" >£0.00</td>
+      <td id="T_e1764_row48_col5" class="data row48 col5" >£0.01</td>
+      <td id="T_e1764_row48_col6" class="data row48 col6" >£-0.01</td>
+      <td id="T_e1764_row48_col7" class="data row48 col7" >-100.00%</td>
+      <td id="T_e1764_row48_col8" class="data row48 col8" >£0.00</td>
+      <td id="T_e1764_row48_col9" class="data row48 col9" ></td>
+      <td id="T_e1764_row48_col10" class="data row48 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row49" class="row_heading level0 row49" >49</th>
-      <td id="T_d2447_row49_col0" class="data row49 col0" ></td>
-      <td id="T_d2447_row49_col1" class="data row49 col1" >HARLAND & WOLFF GR ORD GBP0.01</td>
-      <td id="T_d2447_row49_col2" class="data row49 col2" >9692</td>
-      <td id="T_d2447_row49_col3" class="data row49 col3" >£0.00</td>
-      <td id="T_d2447_row49_col4" class="data row49 col4" >£0.00</td>
-      <td id="T_d2447_row49_col5" class="data row49 col5" >£1,053.90</td>
-      <td id="T_d2447_row49_col6" class="data row49 col6" >£-1,053.90</td>
-      <td id="T_d2447_row49_col7" class="data row49 col7" >-100.00%</td>
-      <td id="T_d2447_row49_col8" class="data row49 col8" >£0.11</td>
-      <td id="T_d2447_row49_col9" class="data row49 col9" ></td>
-      <td id="T_d2447_row49_col10" class="data row49 col10" ></td>
+      <th id="T_e1764_level0_row49" class="row_heading level0 row49" >49</th>
+      <td id="T_e1764_row49_col0" class="data row49 col0" ></td>
+      <td id="T_e1764_row49_col1" class="data row49 col1" >HARLAND & WOLFF GR ORD GBP0.01</td>
+      <td id="T_e1764_row49_col2" class="data row49 col2" >9692</td>
+      <td id="T_e1764_row49_col3" class="data row49 col3" >£0.00</td>
+      <td id="T_e1764_row49_col4" class="data row49 col4" >£0.00</td>
+      <td id="T_e1764_row49_col5" class="data row49 col5" >£1,053.90</td>
+      <td id="T_e1764_row49_col6" class="data row49 col6" >£-1,053.90</td>
+      <td id="T_e1764_row49_col7" class="data row49 col7" >-100.00%</td>
+      <td id="T_e1764_row49_col8" class="data row49 col8" >£0.11</td>
+      <td id="T_e1764_row49_col9" class="data row49 col9" ></td>
+      <td id="T_e1764_row49_col10" class="data row49 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row50" class="row_heading level0 row50" >50</th>
-      <td id="T_d2447_row50_col0" class="data row50 col0" ></td>
-      <td id="T_d2447_row50_col1" class="data row50 col1" >QBS FLYWHEEL LTD NPV</td>
-      <td id="T_d2447_row50_col2" class="data row50 col2" >6</td>
-      <td id="T_d2447_row50_col3" class="data row50 col3" >£0.00</td>
-      <td id="T_d2447_row50_col4" class="data row50 col4" >£0.00</td>
-      <td id="T_d2447_row50_col5" class="data row50 col5" >£0.01</td>
-      <td id="T_d2447_row50_col6" class="data row50 col6" >£-0.01</td>
-      <td id="T_d2447_row50_col7" class="data row50 col7" >-100.00%</td>
-      <td id="T_d2447_row50_col8" class="data row50 col8" >£0.00</td>
-      <td id="T_d2447_row50_col9" class="data row50 col9" ></td>
-      <td id="T_d2447_row50_col10" class="data row50 col10" ></td>
+      <th id="T_e1764_level0_row50" class="row_heading level0 row50" >50</th>
+      <td id="T_e1764_row50_col0" class="data row50 col0" ></td>
+      <td id="T_e1764_row50_col1" class="data row50 col1" >QBS FLYWHEEL LTD NPV</td>
+      <td id="T_e1764_row50_col2" class="data row50 col2" >6</td>
+      <td id="T_e1764_row50_col3" class="data row50 col3" >£0.00</td>
+      <td id="T_e1764_row50_col4" class="data row50 col4" >£0.00</td>
+      <td id="T_e1764_row50_col5" class="data row50 col5" >£0.01</td>
+      <td id="T_e1764_row50_col6" class="data row50 col6" >£-0.01</td>
+      <td id="T_e1764_row50_col7" class="data row50 col7" >-100.00%</td>
+      <td id="T_e1764_row50_col8" class="data row50 col8" >£0.00</td>
+      <td id="T_e1764_row50_col9" class="data row50 col9" ></td>
+      <td id="T_e1764_row50_col10" class="data row50 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row51" class="row_heading level0 row51" >51</th>
-      <td id="T_d2447_row51_col0" class="data row51 col0" ></td>
-      <td id="T_d2447_row51_col1" class="data row51 col1" ></td>
-      <td id="T_d2447_row51_col2" class="data row51 col2" ></td>
-      <td id="T_d2447_row51_col3" class="data row51 col3" >Totals</td>
-      <td id="T_d2447_row51_col4" class="data row51 col4" ></td>
-      <td id="T_d2447_row51_col5" class="data row51 col5" ></td>
-      <td id="T_d2447_row51_col6" class="data row51 col6" ></td>
-      <td id="T_d2447_row51_col7" class="data row51 col7" ></td>
-      <td id="T_d2447_row51_col8" class="data row51 col8" ></td>
-      <td id="T_d2447_row51_col9" class="data row51 col9" ></td>
-      <td id="T_d2447_row51_col10" class="data row51 col10" ></td>
+      <th id="T_e1764_level0_row51" class="row_heading level0 row51" >51</th>
+      <td id="T_e1764_row51_col0" class="data row51 col0" ></td>
+      <td id="T_e1764_row51_col1" class="data row51 col1" ></td>
+      <td id="T_e1764_row51_col2" class="data row51 col2" ></td>
+      <td id="T_e1764_row51_col3" class="data row51 col3" >Totals</td>
+      <td id="T_e1764_row51_col4" class="data row51 col4" ></td>
+      <td id="T_e1764_row51_col5" class="data row51 col5" ></td>
+      <td id="T_e1764_row51_col6" class="data row51 col6" ></td>
+      <td id="T_e1764_row51_col7" class="data row51 col7" ></td>
+      <td id="T_e1764_row51_col8" class="data row51 col8" ></td>
+      <td id="T_e1764_row51_col9" class="data row51 col9" ></td>
+      <td id="T_e1764_row51_col10" class="data row51 col10" ></td>
     </tr>
     <tr>
-      <th id="T_d2447_level0_row52" class="row_heading level0 row52" >52</th>
-      <td id="T_d2447_row52_col0" class="data row52 col0" ></td>
-      <td id="T_d2447_row52_col1" class="data row52 col1" ></td>
-      <td id="T_d2447_row52_col2" class="data row52 col2" ></td>
-      <td id="T_d2447_row52_col3" class="data row52 col3" >GBP</td>
-      <td id="T_d2447_row52_col4" class="data row52 col4" >£74,748.14</td>
-      <td id="T_d2447_row52_col5" class="data row52 col5" >£71,216.06</td>
-      <td id="T_d2447_row52_col6" class="data row52 col6" >£3,532.08</td>
-      <td id="T_d2447_row52_col7" class="data row52 col7" >4.96%</td>
-      <td id="T_d2447_row52_col8" class="data row52 col8" ></td>
-      <td id="T_d2447_row52_col9" class="data row52 col9" ></td>
-      <td id="T_d2447_row52_col10" class="data row52 col10" ></td>
+      <th id="T_e1764_level0_row52" class="row_heading level0 row52" >52</th>
+      <td id="T_e1764_row52_col0" class="data row52 col0" ></td>
+      <td id="T_e1764_row52_col1" class="data row52 col1" ></td>
+      <td id="T_e1764_row52_col2" class="data row52 col2" ></td>
+      <td id="T_e1764_row52_col3" class="data row52 col3" >GBP</td>
+      <td id="T_e1764_row52_col4" class="data row52 col4" >£74,748.14</td>
+      <td id="T_e1764_row52_col5" class="data row52 col5" >£71,216.06</td>
+      <td id="T_e1764_row52_col6" class="data row52 col6" >£3,532.08</td>
+      <td id="T_e1764_row52_col7" class="data row52 col7" >4.96%</td>
+      <td id="T_e1764_row52_col8" class="data row52 col8" ></td>
+      <td id="T_e1764_row52_col9" class="data row52 col9" ></td>
+      <td id="T_e1764_row52_col10" class="data row52 col10" ></td>
     </tr>
   </tbody>
 </table>

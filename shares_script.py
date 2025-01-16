@@ -1,3 +1,4 @@
+from collections import defaultdict
 import pandas as pd
 import weasyprint
 import webbrowser
@@ -192,18 +193,80 @@ plt.savefig('market_value_pie_chart.pdf', format='pdf', bbox_inches='tight')
 plt.show()
 
 # %%
-
+HTML_TEMPLATE = '''
+<html>
+<head>
+<style>
+@page {
+    size: landscape;
+    margin: 0in 0in 0in 0in;
+}
+body {
+    margin: 0;
+}
+div {
+    position: relative;
+    font-size: 8px;
+    width: 10%%;
+    font-family: "Courier New";
+    padding-top: 5px;
+    font-weight: bold;
+}
+table {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    font-size: %(font_size)dpx;
+}
+table, th, td {
+    border: 0.2px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: %(padding)dpx;
+    text-align: left;
+    font-family: Helvetica, Arial, sans-serif;
+}
+table tbody tr:hover {
+    background-color: #dddddd;
+}
+table thead th {
+    text-align: center;
+}
+.wide {
+    width: 90%%;
+}
+</style>
+</head>
+<body>
+'''
 
 # %%
 HTML_TEMPLATE2 = '''
 </body>
 </html>
 '''
-with open('small-template.html', 'r', encoding='utf-8') as smallTemplate:
-    small_template = smallTemplate.read()
+
+
+
+# with open('small-template.html', 'r', encoding='utf-8') as smallTemplate:
+#     small_template = smallTemplate.read()
+
 
 
 def to_html_pretty(df, html_template,filename='out.html', title=''):
+
+
+    options = {
+        "font_size" : float(sys.argv[2]),
+        "padding" : float(sys.argv[3]),
+    }
+
+    try:
+        styled_template = html_template % options
+    except KeyError as e:
+        print(f"KeyError: {e}. Check your template placeholders or options dictionary.")
+        return
 
     ht = ''
 
@@ -212,7 +275,7 @@ def to_html_pretty(df, html_template,filename='out.html', title=''):
         ht += '<div> %s </div>\n' % title
 
     with open(filename, 'w', encoding='utf-8') as f:
-        f.write(html_template+ ht + HTML_TEMPLATE2)
+        f.write(styled_template+ ht + HTML_TEMPLATE2)
 
 # Pretty print the dataframe as an html table to a file
 intermediate_html = 'intermediate.html'
@@ -221,17 +284,23 @@ x = datetime.datetime.now()
 title = 'Updated: ' + x.strftime('%b') + ' ' + x.strftime('%y')
 
 # Normal html:
-to_html_pretty(styled,small_template,intermediate_html, title )
+to_html_pretty(styled,HTML_TEMPLATE,intermediate_html, title )
 # Bob template:
 
 # if you do not want pretty printing, just use pandas:
 # result.to_html(intermediate_html)
 
-# Convert the html file to a pdf file using weasyprint
+# Create the full path including directories if they don't exist
+filepath = sys.argv[4]
+output_dir = os.path.dirname(filepath)
+if output_dir:  
+    os.makedirs(output_dir, exist_ok=True)
 
-out_pdf= os.path.basename(os.path.normpath('shares.csv')).replace('.csv', '') + '.pdf'
-# weasyprint.HTML(intermediate_html).write_pdf(out_pdf)
-weasyprint.HTML('intermediate.html').write_pdf('shares.pdf')
+
+out_pdf = filepath + '.pdf'
+
+
+weasyprint.HTML('intermediate.html').write_pdf(out_pdf)
 
 
 
