@@ -1,9 +1,11 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"github.com/labstack/gommon/log"
+	"html/template"
 	"io"
 	"mime/multipart"
 	"net/http"
@@ -59,11 +61,57 @@ func main() {
 	e := echo.New()
 
 	// Define routes
+	e.GET("/exports", ListExport)
+	e.GET("/exports/:id", GetExport)
+	e.POST("/exports", CreateExport)
 
-	e.POST("/export", CreateExport)
+	e.Static("/", "html")
 
 	// Start the server
 	e.Logger.Fatal(e.Start(":8080"))
+}
+
+func ListExport(c echo.Context) error {
+	var tmpl = template.Must(template.New("row").Parse(`
+		<tr>
+			<td>{{.ID}}</td>
+			<td>{{.Title}}</td>
+			<td>{{.FileSize}}</td>
+			<td>{{.Status}}</td>
+			<td>{{.SourceFilePath}}</td>
+			<td>{{.ExportFilePath}}</td>
+			<td><a href="/exports/{{.ID}}" download="{{.">Download</a></td>
+			<td>{{.Meta}}</td>
+		</tr>
+	`))
+
+	var exports []Exports
+	result := db.Find(&exports)
+	if result.Error != nil {
+		return c.String(http.StatusInternalServerError, "Error fetching data")
+	}
+	//log.Print(exports)
+	c.Response().Header().Set("Content-Type", "text/html")
+	var buf bytes.Buffer
+	for _, export := range exports {
+		if err := tmpl.Execute(&buf, export); err != nil {
+			log.Print("Template execution error:", err)
+			return c.String(http.StatusInternalServerError, "Error rendering data")
+		}
+	}
+	return c.HTML(http.StatusOK, buf.String())
+}
+
+func GetExport(c echo.Context) error {
+	id := c.Param("id")
+	log.Print("hello")
+	export := &Exports{}
+	db.Find(export, id)
+	if export.ID == 0 {
+		return c.HTML(http.StatusBadRequest, "<p>File not found</p>")
+	}
+	log.Print(export.ExportFilePath)
+	return c.Attachment(fmt.Sprintf("%v.txt", export.ExportFilePath), export.Title)
 }
 
 func CreateExport(c echo.Context) error {
