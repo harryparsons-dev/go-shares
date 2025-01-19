@@ -12,6 +12,7 @@ import (
 	"os"
 	"os/exec"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/labstack/echo/v4"
@@ -65,7 +66,12 @@ func main() {
 	e.GET("/exports/:id", GetExport)
 	e.POST("/exports", CreateExport)
 
-	e.Static("/", "html")
+	e.GET("/", func(c echo.Context) error {
+		return c.File("html/index.html")
+	})
+	e.GET("/upload", func(c echo.Context) error {
+		return c.File("html/upload.html")
+	})
 
 	// Start the server
 	e.Logger.Fatal(e.Start(":8080"))
@@ -76,11 +82,12 @@ func ListExport(c echo.Context) error {
 		<tr>
 			<td>{{.ID}}</td>
 			<td>{{.Title}}</td>
+			<td>{{.CreatedAt}}</td>
 			<td>{{.FileSize}}</td>
 			<td>{{.Status}}</td>
 			<td>{{.SourceFilePath}}</td>
 			<td>{{.ExportFilePath}}</td>
-			<td><a href="/exports/{{.ID}}" download="{{.">Download</a></td>
+			<td><button><a href="/exports/{{.ID}}" download="{{.ID}}">Download</a></button></td>
 			<td>{{.Meta}}</td>
 		</tr>
 	`))
@@ -111,7 +118,7 @@ func GetExport(c echo.Context) error {
 		return c.HTML(http.StatusBadRequest, "<p>File not found</p>")
 	}
 	log.Print(export.ExportFilePath)
-	return c.Attachment(fmt.Sprintf("%v.txt", export.ExportFilePath), export.Title)
+	return c.Attachment(fmt.Sprintf("%v.pdf", export.ExportFilePath), export.Title)
 }
 
 func CreateExport(c echo.Context) error {
@@ -121,6 +128,7 @@ func CreateExport(c echo.Context) error {
 	//	return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	//}
 	log.Print("CreateExport")
+
 	title := c.FormValue("title")
 	fontSize := c.FormValue("font_size")
 	padding := c.FormValue("padding")
@@ -130,6 +138,37 @@ func CreateExport(c echo.Context) error {
 		log.Print(err)
 		return echo.NewHTTPError(http.StatusBadRequest)
 	}
+
+	meta := make(map[string]interface{})
+
+	meta["font_size"] = fontSize
+	meta["padding"] = padding
+
+	metaString, err := json.Marshal(meta)
+	if err != nil {
+		log.Error(err)
+	}
+	now := time.Now()
+	// create object
+	export := &Exports{
+		Title:     title,
+		CreatedAt: &now,
+		FileSize:  uint(file.Size),
+		Status:    "processing",
+		Meta:      string(metaString),
+	}
+
+	db.Create(export)
+	// Destination
+	dir := fmt.Sprintf("assets/csv/%v", export.ID)
+	// Ensure the directory exists
+	err = os.MkdirAll(dir, os.ModePerm)
+	if err != nil {
+		log.Error(err)
+		return echo.NewHTTPError(http.StatusInternalServerError)
+	}
+	export.SourceFilePath = fmt.Sprintf("%v/%v", dir, file.Filename)
+	db.Save(export)
 
 	src, err := file.Open()
 	if err != nil {
@@ -142,17 +181,7 @@ func CreateExport(c echo.Context) error {
 		}
 	}(src)
 
-	// Destination
-	dir := "assets/csv"
-	// Ensure the directory exists
-	err = os.MkdirAll(dir, os.ModePerm)
-	if err != nil {
-		log.Error(err)
-		return echo.NewHTTPError(http.StatusInternalServerError)
-	}
-
-	filePath := fmt.Sprintf("%v/%v", dir, file.Filename)
-	dst, err := os.Create(filePath)
+	dst, err := os.Create(export.SourceFilePath)
 	if err != nil {
 		log.Error(err)
 	}
@@ -162,27 +191,7 @@ func CreateExport(c echo.Context) error {
 	if _, err = io.Copy(dst, src); err != nil {
 		log.Error(err)
 	}
-	now := time.Now()
 
-	meta := make(map[string]interface{})
-
-	meta["font_size"] = fontSize
-	meta["padding"] = padding
-
-	metaString, err := json.Marshal(meta)
-	if err != nil {
-		log.Error(err)
-	}
-	// create object
-	export := &Exports{
-		Title:          title,
-		CreatedAt:      &now,
-		SourceFilePath: filePath,
-		FileSize:       uint(file.Size),
-		Status:         "processing",
-		Meta:           string(metaString),
-	}
-	db.Create(export)
 	fontSizeInt, _ := strconv.Atoi(fontSize)
 	paddingInt, _ := strconv.Atoi(padding)
 	GeneratePdf(export, fontSizeInt, paddingInt)
@@ -191,7 +200,16 @@ func CreateExport(c echo.Context) error {
 }
 
 func GeneratePdf(export *Exports, fontSize, padding int) {
-	pdfPath := fmt.Sprintf("assets/pdf/%v", export.ID)
+
+	title := strings.ReplaceAll(export.Title, " ", "-")
+	pdfPath := fmt.Sprintf("assets/pdf/%v/%v", export.ID, title)
+
+	log.Print(export.SourceFilePath)
+	log.Print(pdfPath)
+
+	log.Print(padding)
+	log.Print(fontSize)
+
 	cmd := exec.Command(
 		"bash", "-c",
 		fmt.Sprintf("source venv/bin/activate && python3 shares_script.py %v %v %v %v", export.SourceFilePath, fontSize, padding, pdfPath),

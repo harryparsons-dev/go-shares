@@ -56,7 +56,7 @@ def getDividendYield(ticker):
 
 
 
-df = pd.read_csv(sys.argv[1])
+df = pd.read_csv(sys.argv[1], encoding='utf-8')
 pd.set_option('display.width', 300)
 
 
@@ -151,7 +151,7 @@ sector_market_value = newdf.groupby('Sector')['Market Value'].sum()
 sector_market_value
 
 # %% [markdown]
-# 
+#
 
 # %%
 plt.figure(figsize=(8, 6))
@@ -196,6 +196,8 @@ plt.show()
 HTML_TEMPLATE = '''
 <html>
 <head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style>
 @page {
     size: landscape;
@@ -293,7 +295,7 @@ to_html_pretty(styled,HTML_TEMPLATE,intermediate_html, title )
 # Create the full path including directories if they don't exist
 filepath = sys.argv[4]
 output_dir = os.path.dirname(filepath)
-if output_dir:  
+if output_dir:
     os.makedirs(output_dir, exist_ok=True)
 
 
