@@ -1,5 +1,5 @@
 assets
-venv
+scripts/venv
 *.pdf
 *.csv
 *.ipynb

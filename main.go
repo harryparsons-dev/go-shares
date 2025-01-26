@@ -4,7 +4,12 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"github.com/a-h/templ"
+	"github.com/harryparsons-dev/go-shares/views"
+	"github.com/labstack/echo/v4"
 	"github.com/labstack/gommon/log"
+	"gorm.io/driver/sqlite"
+	"gorm.io/gorm"
 	"html/template"
 	"io"
 	"mime/multipart"
@@ -14,10 +19,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-
-	"github.com/labstack/echo/v4"
-	"gorm.io/driver/sqlite"
-	"gorm.io/gorm"
 )
 
 var db *gorm.DB
@@ -33,12 +34,6 @@ type Exports struct {
 	Meta           string     `json:"meta"`
 }
 
-//type ExportRequest struct {
-//	Title    string `json:"title"`
-//	FontSize string `json:"font_size"`
-//	Padding  string `json:"padding"`
-//}
-
 func initDatabase() {
 	var err error
 	// Initialize database connection
@@ -47,7 +42,7 @@ func initDatabase() {
 		panic("failed to connect database")
 	}
 
-	// Auto-migrate the User model
+	// Auto-migrate the User models
 	err = db.AutoMigrate(&Exports{})
 	if err != nil {
 		panic("failed to migrate database")
@@ -60,11 +55,12 @@ func main() {
 	log.Print("starting server")
 	// Create an Echo instance
 	e := echo.New()
+	// load templates
 
 	// Define routes
-	e.GET("/exports", ListExport)
-	e.GET("/exports/:id", GetExport)
-	e.POST("/exports", CreateExport)
+	e.GET("/exportView", ListExport)
+	e.GET("/exportView/:id", GetExport)
+	e.POST("/exportView", CreateExport)
 
 	e.GET("/", func(c echo.Context) error {
 		return c.File("html/index.html")
@@ -72,9 +68,17 @@ func main() {
 	e.GET("/upload", func(c echo.Context) error {
 		return c.File("html/upload.html")
 	})
-
+	e.GET("/home", homeHandler)
 	// Start the server
 	e.Logger.Fatal(e.Start(":8080"))
+}
+
+func homeHandler(c echo.Context) error {
+	page := views.Layout("Home page")
+	return render(c, page)
+}
+func render(ctx echo.Context, cmp templ.Component) error {
+	return cmp.Render(ctx.Request().Context(), ctx.Response())
 }
 
 func ListExport(c echo.Context) error {
@@ -87,7 +91,7 @@ func ListExport(c echo.Context) error {
 			<td>{{.Status}}</td>
 			<td>{{.SourceFilePath}}</td>
 			<td>{{.ExportFilePath}}</td>
-			<td><button><a href="/exports/{{.ID}}" download="{{.ID}}">Download</a></button></td>
+			<td><button><a href="/exportView/{{.ID}}" download="{{.ID}}">Download</a></button></td>
 			<td>{{.Meta}}</td>
 		</tr>
 	`))
@@ -97,7 +101,7 @@ func ListExport(c echo.Context) error {
 	if result.Error != nil {
 		return c.String(http.StatusInternalServerError, "Error fetching data")
 	}
-	//log.Print(exports)
+	//log.Print(exportView)
 	c.Response().Header().Set("Content-Type", "text/html")
 	var buf bytes.Buffer
 	for _, export := range exports {
@@ -112,8 +116,10 @@ func ListExport(c echo.Context) error {
 func GetExport(c echo.Context) error {
 	id := c.Param("id")
 	log.Print("hello")
+
 	export := &Exports{}
 	db.Find(export, id)
+
 	if export.ID == 0 {
 		return c.HTML(http.StatusBadRequest, "<p>File not found</p>")
 	}
@@ -122,13 +128,6 @@ func GetExport(c echo.Context) error {
 }
 
 func CreateExport(c echo.Context) error {
-	//request := &ExportRequest{}
-	//err := c.Bind(request)
-	//if err != nil {
-	//	return echo.NewHTTPError(http.StatusBadRequest, err.Error())
-	//}
-	log.Print("CreateExport")
-
 	title := c.FormValue("title")
 	fontSize := c.FormValue("font_size")
 	padding := c.FormValue("padding")
@@ -212,7 +211,7 @@ func GeneratePdf(export *Exports, fontSize, padding int) {
 
 	cmd := exec.Command(
 		"bash", "-c",
-		fmt.Sprintf("source venv/bin/activate && python3 shares_script.py %v %v %v %v", export.SourceFilePath, fontSize, padding, pdfPath),
+		fmt.Sprintf("source scripts/venv/bin/activate && python3 scripts/shares_script.py %v %v %v %v", export.SourceFilePath, fontSize, padding, pdfPath),
 	)
 	output, err := cmd.CombinedOutput()
 	if err != nil {
