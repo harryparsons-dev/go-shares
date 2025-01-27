@@ -31,7 +31,7 @@ func NewExportHandler(db *gorm.DB) *ExportHandler {
 }
 
 func (h *ExportHandler) List(c echo.Context) error {
-
+	user := c.Get("user").(*models.User)
 	var exports []models.Exports
 	result := h.db.Find(&exports)
 
@@ -39,7 +39,7 @@ func (h *ExportHandler) List(c echo.Context) error {
 		return c.String(http.StatusInternalServerError, "Error fetching data")
 	}
 
-	return render(c, exportView.Show(exports))
+	return render(c, exportView.Show(exports, *user))
 }
 
 func (h *ExportHandler) Get(c echo.Context) error {
@@ -129,5 +129,6 @@ func (h *ExportHandler) Create(c echo.Context) error {
 }
 
 func (h *ExportHandler) ShowUploadPage(c echo.Context) error {
-	return render(c, uploadView.Show())
+	user := c.Get("user").(*models.User)
+	return render(c, uploadView.Show(*user))
 }

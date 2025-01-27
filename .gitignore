@@ -5,3 +5,4 @@ scripts/venv
 *.ipynb
 go.sum
 .idea
+gorm.db

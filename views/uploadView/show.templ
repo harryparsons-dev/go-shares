@@ -2,10 +2,11 @@ package uploadView
 
 import "github.com/harryparsons-dev/go-shares/views/layout"
 import "github.com/harryparsons-dev/go-shares/views/components"
+import "github.com/harryparsons-dev/go-shares/models"
 
-templ Show(){
+templ Show(user models.User){
     @layout.Base()
-    @components.Navbar()
+    @components.Navbar(user)
 <form
         id="create-export"
         hx-post="/exports"
