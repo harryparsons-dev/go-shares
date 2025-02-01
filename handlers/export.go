@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"github.com/harryparsons-dev/go-shares/models"
 	"github.com/harryparsons-dev/go-shares/services"
-	"github.com/harryparsons-dev/go-shares/views/exportView"
 	"github.com/harryparsons-dev/go-shares/views/uploadView"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/gommon/log"
@@ -31,7 +30,7 @@ func NewExportHandler(db *gorm.DB) *ExportHandler {
 }
 
 func (h *ExportHandler) List(c echo.Context) error {
-	user := c.Get("user").(*models.User)
+	//user := c.Get("user").(*models.User)
 	var exports []models.Exports
 	result := h.db.Find(&exports)
 
@@ -39,7 +38,7 @@ func (h *ExportHandler) List(c echo.Context) error {
 		return c.String(http.StatusInternalServerError, "Error fetching data")
 	}
 
-	return render(c, exportView.Show(exports, *user))
+	return c.JSON(http.StatusOK, exports)
 }
 
 func (h *ExportHandler) Get(c echo.Context) error {

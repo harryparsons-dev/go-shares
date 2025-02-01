@@ -6,3 +6,5 @@ scripts/venv
 go.sum
 .idea
 gorm.db
+venv
+/venv/

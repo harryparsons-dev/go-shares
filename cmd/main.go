@@ -23,12 +23,13 @@ func main() {
 	//MIDDLEWHERE
 	app.Use(middleware.Logger())
 	app.Use(middleware.Recover())
+	app.Use(middleware.CORS())
 
 	// Pages
 	app.GET("/login", userHandler.Home)
 	app.GET("/logout", userHandler.Logout)
 
-	app.GET("/exports", exportHandler.List, authMiddleware)
+	app.GET("/exports", exportHandler.List)
 	app.POST("/exports", exportHandler.Create, authMiddleware)
 	//Endpoints
 	app.GET("/upload", exportHandler.ShowUploadPage, authMiddleware)
