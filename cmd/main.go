@@ -30,10 +30,10 @@ func main() {
 	app.GET("/logout", userHandler.Logout)
 
 	app.GET("/exports", exportHandler.List)
-	app.POST("/exports", exportHandler.Create, authMiddleware)
+	app.POST("/exports", exportHandler.Create)
 	//Endpoints
-	app.GET("/upload", exportHandler.ShowUploadPage, authMiddleware)
-	app.GET("/exports/download/:id", exportHandler.Get, authMiddleware)
+	app.GET("/upload", exportHandler.ShowUploadPage)
+	app.GET("/exports/download/:id", exportHandler.Get)
 
 	app.Start(":3000")
 
@@ -66,7 +66,7 @@ func authMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 		username := cookie.Value
 		user := &models.User{}
 
-		db.Where("username = ?", username).Find(&user)
+		db.Where("username = ?", username).Find(user)
 		if err != nil || user.ID == 0 {
 			return c.Redirect(http.StatusSeeOther, "/login")
 		}

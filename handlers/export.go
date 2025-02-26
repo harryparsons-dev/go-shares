@@ -32,7 +32,7 @@ func NewExportHandler(db *gorm.DB) *ExportHandler {
 func (h *ExportHandler) List(c echo.Context) error {
 	//user := c.Get("user").(*models.User)
 	var exports []models.Exports
-	result := h.db.Find(&exports)
+	result := h.db.Debug().Find(&exports)
 
 	if result.Error != nil {
 		return c.String(http.StatusInternalServerError, "Error fetching data")
@@ -49,7 +49,7 @@ func (h *ExportHandler) Get(c echo.Context) error {
 	h.db.Find(export, id)
 
 	if export.ID == 0 {
-		return c.HTML(http.StatusBadRequest, "<p>File not found</p>")
+		return c.HTML(http.StatusBadRequest, "File not found")
 	}
 	log.Print(export.ExportFilePath)
 	return c.Attachment(fmt.Sprintf("%v.pdf", export.ExportFilePath), export.Title)
@@ -73,7 +73,7 @@ func (h *ExportHandler) Create(c echo.Context) error {
 
 	metaString, err := json.Marshal(meta)
 	if err != nil {
-		log.Error(err)
+		log.Errorf("Error marshal json %v ", err)
 	}
 	now := time.Now()
 	// create object
@@ -92,10 +92,14 @@ func (h *ExportHandler) Create(c echo.Context) error {
 	err = os.MkdirAll(dir, os.ModePerm)
 	if err != nil {
 		log.Error(err)
-		return echo.NewHTTPError(http.StatusInternalServerError)
+		return echo.NewHTTPError(http.StatusInternalServerError, "Error making file")
 	}
 	export.SourceFilePath = fmt.Sprintf("%v/%v", dir, file.Filename)
-	h.db.Save(export)
+	err = h.db.Save(export).Error
+	if err != nil {
+		log.Printf("Error saving to db: %v", err)
+		return echo.NewHTTPError(http.StatusInternalServerError, "Error saving to the db")
+	}
 
 	src, err := file.Open()
 	if err != nil {
