@@ -10,5 +10,6 @@ type Exports struct {
 	ExportFilePath string     `json:"export_file_path"`
 	FileSize       uint       `json:"file_size"`
 	Status         string     `json:"status"`
+	ErrorMessages  string     `json:"error_messages"`
 	Meta           string     `json:"meta"`
 }

@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"github.com/harryparsons-dev/go-shares/models"
 	"github.com/harryparsons-dev/go-shares/services"
-	"github.com/harryparsons-dev/go-shares/views/uploadView"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/gommon/log"
 	"gorm.io/gorm"
@@ -13,6 +12,7 @@ import (
 	"mime/multipart"
 	"net/http"
 	"os"
+	"path/filepath"
 	"strconv"
 	"time"
 )
@@ -30,9 +30,8 @@ func NewExportHandler(db *gorm.DB) *ExportHandler {
 }
 
 func (h *ExportHandler) List(c echo.Context) error {
-	//user := c.Get("user").(*models.User)
 	var exports []models.Exports
-	result := h.db.Debug().Find(&exports)
+	result := h.db.Find(&exports)
 
 	if result.Error != nil {
 		return c.String(http.StatusInternalServerError, "Error fetching data")
@@ -65,6 +64,21 @@ func (h *ExportHandler) Create(c echo.Context) error {
 		log.Print(err)
 		return echo.NewHTTPError(http.StatusBadRequest)
 	}
+	src, err := file.Open()
+	if err != nil {
+		log.Error(err)
+	}
+	defer func(src multipart.File) {
+		err := src.Close()
+		if err != nil {
+			log.Error(err)
+		}
+	}(src)
+
+	if filepath.Ext(file.Filename) != ".csv" {
+		log.Error("Invalid file extension:", file.Filename)
+		return c.JSON(http.StatusBadRequest, "Invalid file type. Please submit a .csv file")
+	}
 
 	meta := make(map[string]interface{})
 
@@ -81,7 +95,7 @@ func (h *ExportHandler) Create(c echo.Context) error {
 		Title:     title,
 		CreatedAt: &now,
 		FileSize:  uint(file.Size),
-		Status:    "processing",
+		Status:    "Processing",
 		Meta:      string(metaString),
 	}
 
@@ -101,17 +115,6 @@ func (h *ExportHandler) Create(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusInternalServerError, "Error saving to the db")
 	}
 
-	src, err := file.Open()
-	if err != nil {
-		log.Error(err)
-	}
-	defer func(src multipart.File) {
-		err := src.Close()
-		if err != nil {
-			log.Error(err)
-		}
-	}(src)
-
 	dst, err := os.Create(export.SourceFilePath)
 	if err != nil {
 		log.Error(err)
@@ -126,12 +129,11 @@ func (h *ExportHandler) Create(c echo.Context) error {
 	fontSizeInt, _ := strconv.Atoi(fontSize)
 	paddingInt, _ := strconv.Atoi(padding)
 
-	_ = h.pdfService.GeneratePdf(export, fontSizeInt, paddingInt)
+	go func() {
+		log.Printf("Starting export")
+		h.pdfService.GeneratePdf(export, fontSizeInt, paddingInt)
+		log.Printf("Finished generating pdf")
+	}()
 
-	return c.HTML(http.StatusOK, fmt.Sprintf("<p>File %s uploaded successfully.</p>", file.Filename))
-}
-
-func (h *ExportHandler) ShowUploadPage(c echo.Context) error {
-	user := c.Get("user").(*models.User)
-	return render(c, uploadView.Show(*user))
+	return c.JSON(http.StatusOK, "File upload successfully")
 }

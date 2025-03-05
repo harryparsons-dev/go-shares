@@ -17,7 +17,7 @@ func NewPdfService(db *gorm.DB) *PdfService {
 	return &PdfService{db: db}
 }
 
-func (s *PdfService) GeneratePdf(export *models.Exports, fontSize, padding int) error {
+func (s *PdfService) GeneratePdf(export *models.Exports, fontSize, padding int) {
 
 	title := strings.ReplaceAll(export.Title, " ", "-")
 	pdfPath := fmt.Sprintf("assets/pdf/%v/%v", export.ID, title)
@@ -36,12 +36,13 @@ func (s *PdfService) GeneratePdf(export *models.Exports, fontSize, padding int) 
 	if err != nil {
 		log.Printf("Error creating pdf: %v : %v", err.Error(), string(output))
 		export.Status = "Failed"
+		export.ErrorMessages = fmt.Sprintf("%v", err)
 		s.db.Save(export)
-		return err
+		return
 	}
 
-	export.Status = "Complete"
+	export.Status = "Completed"
 	export.ExportFilePath = pdfPath
 	s.db.Save(export)
-	return nil
+	return
 }

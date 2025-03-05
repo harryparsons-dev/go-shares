@@ -32,7 +32,6 @@ func main() {
 	app.GET("/exports", exportHandler.List)
 	app.POST("/exports", exportHandler.Create)
 	//Endpoints
-	app.GET("/upload", exportHandler.ShowUploadPage)
 	app.GET("/exports/download/:id", exportHandler.Get)
 
 	app.Start(":3000")

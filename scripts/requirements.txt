@@ -61,5 +61,5 @@ urllib3==2.2.3
 wcwidth==0.2.13
 weasyprint==63.0
 webencodings==0.5.1
-yfinance==0.2.48
+yfinance==0.2.54
 zopfli==0.2.3.post1
