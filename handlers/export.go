@@ -54,6 +54,18 @@ func (h *ExportHandler) Get(c echo.Context) error {
 	return c.Attachment(fmt.Sprintf("%v.pdf", export.ExportFilePath), export.Title)
 }
 
+func (h *ExportHandler) GetPie(c echo.Context) error {
+	id := c.Param("id")
+
+	export := &models.Exports{}
+	h.db.Find(export, id)
+
+	if export.ID == 0 {
+		return c.HTML(http.StatusBadRequest, "File not found")
+	}
+	return c.Attachment(fmt.Sprintf("%v.pdf", export.PieChartFilePath), export.Title)
+}
+
 func (h *ExportHandler) Create(c echo.Context) error {
 	title := c.FormValue("title")
 	fontSize := c.FormValue("font_size")
@@ -97,6 +109,8 @@ func (h *ExportHandler) Create(c echo.Context) error {
 		FileSize:  uint(file.Size),
 		Status:    "Processing",
 		Meta:      string(metaString),
+		FontSize:  fontSize,
+		Padding:   padding,
 	}
 
 	h.db.Create(export)

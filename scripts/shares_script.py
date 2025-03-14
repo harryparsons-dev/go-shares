@@ -61,7 +61,6 @@ pd.set_option('display.width', 300)
 
 
 
-
 df.columns = df.columns.str.strip('\ufeff')
 df['Qty'] = df['Qty'].astype('Int64').astype('string')
 
@@ -188,7 +187,14 @@ plt.legend(wedges, legend_labels, title="Sectors", loc="center left", bbox_to_an
 
 plt.axis('equal')
 
-plt.savefig('market_value_pie_chart.pdf', format='pdf', bbox_inches='tight')
+pieChartPath = sys.argv[5]
+pie_chart_output_path  = os.path.dirname(pieChartPath)
+if pie_chart_output_path:
+    os.makedirs(pie_chart_output_path, exist_ok=True)
+
+
+pie_out_pdf = pieChartPath + '.pdf'
+plt.savefig(pie_out_pdf, format='pdf', bbox_inches='tight')
 # ')  # Equal aspect ratio ensures the pie chart is circular
 plt.show()
 
@@ -280,7 +286,7 @@ def to_html_pretty(df, html_template,filename='out.html', title=''):
         f.write(styled_template+ ht + HTML_TEMPLATE2)
 
 # Pretty print the dataframe as an html table to a file
-intermediate_html = 'intermediate.html'
+intermediate_html = 'scripts/intermediate.html'
 
 x = datetime.datetime.now()
 title = 'Updated: ' + x.strftime('%b') + ' ' + x.strftime('%y')
@@ -302,7 +308,7 @@ if output_dir:
 out_pdf = filepath + '.pdf'
 
 
-weasyprint.HTML('intermediate.html').write_pdf(out_pdf)
+weasyprint.HTML('scripts/intermediate.html').write_pdf(out_pdf)
 
 
 
