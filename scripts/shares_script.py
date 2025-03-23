@@ -262,7 +262,7 @@ HTML_TEMPLATE2 = '''
 
 
 
-def to_html_pretty(df, html_template,filename='out.html', title=''):
+def to_html_pretty(df, html_template,filename='out.html'):
 
 
     options = {
@@ -279,8 +279,6 @@ def to_html_pretty(df, html_template,filename='out.html', title=''):
     ht = ''
 
     ht += df.to_html(classes='wide', escape=False, index=False)
-    if title != '':
-        ht += '<div> %s </div>\n' % title
 
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(styled_template+ ht + HTML_TEMPLATE2)
@@ -288,11 +286,8 @@ def to_html_pretty(df, html_template,filename='out.html', title=''):
 # Pretty print the dataframe as an html table to a file
 intermediate_html = 'scripts/intermediate.html'
 
-x = datetime.datetime.now()
-title = 'Updated: ' + x.strftime('%b') + ' ' + x.strftime('%y')
-
 # Normal html:
-to_html_pretty(styled,HTML_TEMPLATE,intermediate_html, title )
+to_html_pretty(styled,HTML_TEMPLATE,intermediate_html)
 # Bob template:
 
 # if you do not want pretty printing, just use pandas:

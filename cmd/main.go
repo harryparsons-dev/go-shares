@@ -10,6 +10,7 @@ import (
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 	"log"
+	"net/http"
 	"os"
 )
 
@@ -31,16 +32,27 @@ func main() {
 	//MIDDLEWHERE
 	app.Use(middleware.Logger())
 	app.Use(middleware.Recover())
-	app.Use(middleware.CORS())
+
+	app.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"https://shares-converter.netlify.app", "http://localhost:5173"}, // Replace with your actual Netlify URL
+		AllowMethods: []string{http.MethodGet, http.MethodPost, http.MethodPut, http.MethodDelete},
+		AllowHeaders: []string{
+			"Origin", "Content-Type", "Accept", "Authorization", "ngrok-skip-browser-warning", // Add ngrok-skip-browser-warning
+		},
+	}))
 
 	app.GET("/exports", exportHandler.List, echojwt.JWT([]byte(os.Getenv("JWT_SECRET"))))
 	app.POST("/exports", exportHandler.Create, echojwt.JWT([]byte(os.Getenv("JWT_SECRET"))))
 	app.GET("/exports/download/:id", exportHandler.Get, echojwt.JWT([]byte(os.Getenv("JWT_SECRET"))))
 	app.GET("/exports/pie/download/:id", exportHandler.GetPie, echojwt.JWT([]byte(os.Getenv("JWT_SECRET"))))
+	app.DELETE("/exports/:id", exportHandler.Delete, echojwt.JWT([]byte(os.Getenv("JWT_SECRET"))))
 
 	app.POST("/login", userHandler.Login)
 
-	app.Start(":3000")
+	err = app.Start(":4000")
+	if err != nil {
+		log.Fatalf("Failed to start server: %v", err)
+	}
 
 }
 

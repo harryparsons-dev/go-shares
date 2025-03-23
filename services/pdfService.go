@@ -25,7 +25,7 @@ func (s *PdfService) GeneratePdf(export *models.Exports, fontSize, padding int) 
 
 	cmd := exec.Command(
 		"bash", "-c",
-		fmt.Sprintf("source scripts/venv/bin/activate && python3 scripts/shares_script.py %v %v %v %v %v", export.SourceFilePath, fontSize, padding, pdfPath, pieChartPath),
+		fmt.Sprintf("source scripts/venv/bin/activate && python3 scripts/shares_script.py '%v' %v %v %v %v", export.SourceFilePath, fontSize, padding, pdfPath, pieChartPath),
 	)
 	output, err := cmd.CombinedOutput()
 	if err != nil {

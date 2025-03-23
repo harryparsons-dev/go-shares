@@ -151,3 +151,21 @@ func (h *ExportHandler) Create(c echo.Context) error {
 
 	return c.JSON(http.StatusOK, "File upload successfully")
 }
+
+func (h *ExportHandler) Delete(c echo.Context) error {
+	id := c.Param("id")
+
+	export := &models.Exports{}
+	h.db.Where("id = ?", id).Find(export)
+
+	if export.ID == 0 {
+		return c.JSON(http.StatusNotFound, "Export not found")
+	}
+
+	err := h.db.Delete(export).Error
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, "Unexpected error occurred deleting export")
+	}
+
+	return c.JSON(http.StatusOK, "Export deleted successfully")
+}

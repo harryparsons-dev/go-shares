@@ -1,5 +1,7 @@
 assets
 scripts/venv
+scripts/intermediate.html
+scripts/small-template.html
 *.pdf
 *.csv
 *.ipynb
