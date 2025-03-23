@@ -10,3 +10,4 @@ go.sum
 gorm.db
 venv
 /venv/
+.env
